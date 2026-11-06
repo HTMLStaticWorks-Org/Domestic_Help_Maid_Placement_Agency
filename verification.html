@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our 8-Stage Staff Verification Process | Hearth &amp; Haven Domestic Staffing</title>
+  <meta name="description" content="Learn how Hearth & Haven screens domestic helpers through an 8-stage verification journey: ID checks, dual-address verification, employer reference calls, authorized background checks, and practical skill assessments.">
+
+  <!-- Pre-paint Theme & RTL Initialization -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('hearth_haven_theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+        var savedDir = localStorage.getItem('hearth_haven_direction');
+        if (savedDir === 'rtl' || savedDir === 'ltr') {
+          document.documentElement.setAttribute('dir', savedDir);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Favicon (Brand Icon) -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       MANDATORY STICKY NAVBAR
+       ======================================================================== -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-xl site-navbar" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand-wrap" href="index.html">
+          <span class="brand-mark">H</span>
+          <span class="brand-text">
+            <span class="brand-name">Hearth &amp; Haven</span>
+            <span class="brand-tagline">Domestic Placement Agency</span>
+          </span>
+        </a>
+
+        <div class="d-flex align-items-center gap-2 d-xl-none">
+          <button type="button" class="rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Toggle color theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button class="navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-4"></i>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="mainNavbarCollapse">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Home
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                <li>
+                  <a class="dropdown-item" href="index.html">
+                    <span>Home 1 — Classic Agency</span>
+                    <span class="dropdown-badge">Default</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="home-2.html">
+                    <span>Home 2 — Editorial &amp; Finder</span>
+                    <span class="dropdown-badge">Demo 2</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="verification.html">Verification Process</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <!-- Dashboard Menu beside Contact -->
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+          </ul>
+
+          <div class="navbar-actions">
+            <a href="signup.html" class="nav-signup-btn">Sign Up</a>
+            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+            <button type="button" class="theme-toggle-btn d-none d-xl-inline-flex" data-theme-toggle aria-label="Toggle color theme">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         PAGE HERO
+         ====================================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="row align-items-center g-5 js-gsap-reveal">
+          <div class="col-lg-7">
+            <span class="eyebrow-badge">
+              <i class="bi bi-shield-fill-check"></i>
+              <span>Our 8-Stage Screening &amp; Placement Protocol</span>
+            </span>
+            <h1 class="display-hero mb-3">Methodical Staff Verification Built on Documentation &amp; Consent.</h1>
+            <p class="section-subtitle mb-4">
+              Every candidate registered with Hearth &amp; Haven undergoes a structured 8-stage evaluation before being introduced to a client family. We combine document verification, direct employer reference interviews, practical skill checks, and supervised home trials.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#verification-journey" class="btn-brand">
+                <span>Explore the 8-Stage Journey</span>
+                <i class="bi bi-arrow-down"></i>
+              </a>
+              <a href="#trust-safety" class="btn-outline-brand">
+                <i class="bi bi-balance-scale"></i>
+                <span>Legal &amp; Safety Standards</span>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="p-4 p-md-5 rounded-4 shadow-md" style="background-color: var(--bg-navy); color: #FAF8F5;">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge rounded-pill" style="background-color: var(--accent-teal);">Pre-Interview Dossier</span>
+                <i class="bi bi-file-earmark-medical fs-3" style="color: var(--accent-warm);"></i>
+              </div>
+              <h2 class="h4 text-white mb-2">No Candidate Is Sent Unscreened</h2>
+              <p class="small mb-4" style="color: #C2CEDC;">
+                Only around 32% of applicants who walk into our placement centers complete all 8 stages of our verification and suitability workflow.
+              </p>
+              <div class="row g-2 text-center">
+                <div class="col-4">
+                  <div class="p-2 rounded-3" style="background-color: rgba(255,255,255,0.08);">
+                    <div class="fw-bold text-white">8 Steps</div>
+                    <div style="font-size: 0.72rem; color: #C2CEDC;">Audit Trail</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-2 rounded-3" style="background-color: rgba(255,255,255,0.08);">
+                    <div class="fw-bold text-white">2+ Refs</div>
+                    <div style="font-size: 0.72rem; color: #C2CEDC;">Employer Calls</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-2 rounded-3" style="background-color: rgba(255,255,255,0.08);">
+                    <div class="fw-bold text-white">Signed</div>
+                    <div style="font-size: 0.72rem; color: #C2CEDC;">Candidate Consent</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         NUMBERED 8-STAGE VISUAL VERIFICATION JOURNEY
+         ====================================================================== -->
+    <section class="section-py" id="verification-journey">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 720px;">
+          <span class="eyebrow-badge">Step-by-Step Screening Architecture</span>
+          <h2 class="section-title">The 8-Stage Candidate Verification Journey</h2>
+          <p class="section-subtitle mx-auto">
+            Each stage is logged in the candidate's file and summarized in the Pre-Placement Verification Dossier shared with your family.
+          </p>
+        </div>
+
+        <div class="row g-5 align-items-start">
+          <!-- Left Column: Visual Timeline Steps 1 to 4 -->
+          <div class="col-lg-6">
+            <div class="verification-timeline">
+
+              <!-- STAGE 1 -->
+              <div class="timeline-node">
+                <div class="timeline-marker">01</div>
+                <div class="verification-step-card">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Stage 01 • Identity</span>
+                    <i class="bi bi-person-vcard fs-4" style="color: var(--accent-teal);"></i>
+                  </div>
+                  <h3 class="h5 mb-2">Identity Document Verification</h3>
+                  <p class="small mb-3">
+                    Candidates must present original government-issued photo identification (such as Aadhaar, Voter ID, Passport, or Driving License). Our verification desk cross-checks name spelling, date of birth, legal adult working age (18+ years), and photograph match against original records.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Original ID Inspected</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Age Eligibility (18+)</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Recent Photograph Logged</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STAGE 2 -->
+              <div class="timeline-node">
+                <div class="timeline-marker">02</div>
+                <div class="verification-step-card">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Stage 02 • Residence</span>
+                    <i class="bi bi-geo-alt-fill fs-4" style="color: var(--accent-teal);"></i>
+                  </div>
+                  <h3 class="h5 mb-2">Current &amp; Permanent Address Verification</h3>
+                  <p class="small mb-3">
+                    We document both the candidate's current local residential address and their permanent hometown address using utility bills, rental agreements, ration cards, or family contact verification so residential traceability is established.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Local Address Proof</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Permanent Address Logged</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Next-of-Kin Contact</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STAGE 3 -->
+              <div class="timeline-node">
+                <div class="timeline-marker">03</div>
+                <div class="verification-step-card">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Stage 03 • Community &amp; Family</span>
+                    <i class="bi bi-people-fill fs-4" style="color: var(--accent-teal);"></i>
+                  </div>
+                  <h3 class="h5 mb-2">Personal &amp; Family Reference Checks</h3>
+                  <p class="small mb-3">
+                    Particularly critical for live-in placements, our counselors speak directly with two independent personal or family references to verify the candidate's family background, stability, and family awareness/support of their work schedule.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> 2 Personal References</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Live-In Guardian Consent</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STAGE 4 -->
+              <div class="timeline-node">
+                <div class="timeline-marker">04</div>
+                <div class="verification-step-card">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Stage 04 • Work Track Record</span>
+                    <i class="bi bi-telephone-inbound-fill fs-4" style="color: var(--accent-teal);"></i>
+                  </div>
+                  <h3 class="h5 mb-2">Previous Employment Checks</h3>
+                  <p class="small mb-3">
+                    Our placement coordinators conduct structured phone interviews with previous household employers. We verify dates of employment, primary duties handled, punctuality, honesty, behavior around children/seniors, and the reason for leaving.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Tenure Confirmed</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Conduct &amp; Punctuality</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Reason for Leaving</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Timeline Steps 5 to 8 -->
+          <div class="col-lg-6">
+            <div class="verification-timeline">
+
+              <!-- STAGE 5 -->
+              <div class="timeline-node">
+                <div class="timeline-marker">05</div>
+                <div class="verification-step-card">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Stage 05 • Legal &amp; Police Check</span>
+                    <i class="bi bi-shield-lock-fill fs-4" style="color: var(--accent-teal);"></i>
+                  </div>
+                  <h3 class="h5 mb-2">Background Checks (Where Legally Available &amp; Authorized)</h3>
+                  <p class="small mb-3">
+                    With the candidate's explicit written consent, we conduct searches across publicly accessible digital court records and assist families in submitting official local police domestic-help verification forms in accordance with municipal guidelines.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Signed Candidate Consent</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Public Court Record Check</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Police Form Facilitation</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STAGE 6 -->
+              <div class="timeline-node">
+                <div class="timeline-marker">06</div>
+                <div class="verification-step-card">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Stage 06 • Practical Competence</span>
+                    <i class="bi bi-clipboard2-check-fill fs-4" style="color: var(--accent-teal);"></i>
+                  </div>
+                  <h3 class="h5 mb-2">Skills &amp; Experience Assessment</h3>
+                  <p class="small mb-3">
+                    Candidates are evaluated on role-specific competencies: appliance safety and fabric care for housemaids; kitchen hygiene and meal preparation for cooks; sterilization and emergency awareness for nannies; and safe mobility transfer for elderly caregivers.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Hygiene &amp; Safety Protocol</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Appliance Operation</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Role Skill Grading</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STAGE 7 -->
+              <div class="timeline-node">
+                <div class="timeline-marker">07</div>
+                <div class="verification-step-card">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Stage 07 • Temperament &amp; Fit</span>
+                    <i class="bi bi-chat-heart-fill fs-4" style="color: var(--accent-teal);"></i>
+                  </div>
+                  <h3 class="h5 mb-2">Interview &amp; Suitability Assessment</h3>
+                  <p class="small mb-3">
+                    A senior placement counselor conducts a 1-on-1 interview to evaluate communication clarity, personal grooming, emotional maturity, comfort with household pets, dietary preferences, and long-term commitment.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Counselor Interview</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Expectation Alignment</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STAGE 8 -->
+              <div class="timeline-node">
+                <div class="timeline-marker">08</div>
+                <div class="verification-step-card">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Stage 08 • Onboarding</span>
+                    <i class="bi bi-house-check-fill fs-4" style="color: var(--accent-teal);"></i>
+                  </div>
+                  <h3 class="h5 mb-2">Final Placement &amp; Supervised Trial Process</h3>
+                  <p class="small mb-3">
+                    We arrange family interviews, coordinate a 2- to 3-day supervised paid trial in your home, execute a written placement agreement detailing duties, salary, and weekly offs, and schedule 30/90/180-day counselor check-ins.
+                  </p>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> 2–3 Day Home Trial</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Written Agreement</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Post-Placement Check-Ins</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VISUAL SAMPLE DOSSIER & SUPPORTING IMAGERY SECTION
+         ====================================================================== -->
+    <section class="section-py bg-ivory-alt">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Placement counselor reviewing candidate verification documents" class="rounded-4 shadow-md w-100" style="object-fit: cover; min-height: 380px;">
+          </div>
+          <div class="col-lg-7">
+            <span class="eyebrow-badge">What Families Receive</span>
+            <h2 class="section-title mb-3">The Pre-Interview Candidate Verification Dossier</h2>
+            <p class="mb-4">
+              Before you invite any candidate into your home for a trial, we provide a structured Verification Dossier so you can make an informed decision based on documented facts rather than verbal assurances.
+            </p>
+
+            <!-- Sample Dossier Card -->
+            <div class="p-4 rounded-4 shadow-sm" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+              <div class="d-flex flex-wrap justify-content-between align-items-center pb-3 mb-3 border-bottom" style="border-color: var(--border-subtle) !important;">
+                <div>
+                  <span class="badge rounded-pill mb-1" style="background-color: var(--accent-warm-soft); color: var(--accent-warm);">Sample Document Format (Fictional Illustration)</span>
+                  <h3 class="h6 mb-0">Candidate Verification Summary — Ref #HH-2026-804</h3>
+                </div>
+                <span class="verified-chip"><i class="bi bi-patch-check-fill"></i> All 8 Stages Logged</span>
+              </div>
+
+              <div class="row g-3 small">
+                <div class="col-sm-6">
+                  <div class="text-muted">Identity Document Status</div>
+                  <div class="fw-semibold"><i class="bi bi-check2-circle text-success me-1"></i>Govt Photo ID &amp; Age Cross-Verified</div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="text-muted">Address Traceability</div>
+                  <div class="fw-semibold"><i class="bi bi-check2-circle text-success me-1"></i>Local &amp; Permanent Address Logged</div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="text-muted">Prior Employer Audits</div>
+                  <div class="fw-semibold"><i class="bi bi-check2-circle text-success me-1"></i>2 Household Employers Contacted</div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="text-muted">Police Verification Status</div>
+                  <div class="fw-semibold"><i class="bi bi-check2-circle text-success me-1"></i>Consent Signed &amp; Application Filed</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         DEDICATED TRUST, SAFETY & LEGAL COMPLIANCE SECTION
+         ====================================================================== -->
+    <section class="section-py" id="trust-safety">
+      <div class="container">
+        <div class="p-4 p-md-5 rounded-4 shadow-sm" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+          <div class="row g-4 align-items-start">
+            <div class="col-lg-8">
+              <span class="eyebrow-badge">
+                <i class="bi bi-shield-exclamation"></i>
+                <span>Trust, Safety &amp; Legal Compliance Disclosure</span>
+              </span>
+              <h2 class="h3 mb-3">Our Commitment to Honest, Lawful &amp; Realistic Screening</h2>
+              <p class="mb-3">
+                At Hearth &amp; Haven, transparency means being forthright about both the rigor of our screening process and the legal boundaries that govern private staffing agencies.
+              </p>
+
+              <div class="compliance-notice-box mb-4">
+                <h3 class="h6 mb-2">1. Dependence on Applicable Laws, Consent &amp; Official Records</h3>
+                <p class="small mb-0">
+                  All identity checks, address verifications, reference inquiries, and background checks are performed strictly within the framework of applicable data privacy and labor laws. Criminal database checks and local police verification procedures require the explicit written consent of the candidate and depend on the availability, accuracy, and processing timelines of municipal police departments and public court registries.
+                </p>
+              </div>
+
+              <div class="compliance-notice-box mb-4">
+                <h3 class="h6 mb-2">2. Why We Never Claim "100% Risk-Free" or "Guaranteed Safety"</h3>
+                <p class="small mb-0">
+                  While multi-stage verification verifies historical records and prior employer feedback, human behavior in a household setting can never be predicted with absolute certainty. Any agency claiming "100% guaranteed safety" or "zero-risk placements" is making an unsupported claim. Instead, we combine thorough pre-placement screening with practical household precautions.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="p-4 rounded-4 h-100" style="background-color: var(--bg-secondary); border: 1px solid var(--border-color);">
+                <h3 class="h5 mb-3"><i class="bi bi-house-lock me-2" style="color: var(--accent-teal);"></i>Recommended Household Safety Practices</h3>
+                <p class="small mb-3">
+                  We advise all client families to pair our agency screening with sensible household practices:
+                </p>
+                <ul class="list-unstyled small mb-4">
+                  <li class="mb-2 d-flex gap-2">
+                    <i class="bi bi-check2-square text-success mt-1"></i>
+                    <span>Always complete the local police station domestic-helper registration form in your jurisdiction (our counselors prepare the paperwork).</span>
+                  </li>
+                  <li class="mb-2 d-flex gap-2">
+                    <i class="bi bi-check2-square text-success mt-1"></i>
+                    <span>Be present during the initial 2- to 3-day trial period to supervise routines and set clear household boundaries.</span>
+                  </li>
+                  <li class="mb-2 d-flex gap-2">
+                    <i class="bi bi-check2-square text-success mt-1"></i>
+                    <span>Keep cash, jewelry, and sensitive financial documents secured in locked storage.</span>
+                  </li>
+                  <li class="mb-0 d-flex gap-2">
+                    <i class="bi bi-check2-square text-success mt-1"></i>
+                    <span>Use common-area cameras transparently (never in private bathrooms or staff sleeping quarters) with prior disclosure.</span>
+                  </li>
+                </ul>
+                <a href="contact.html#enquiry-form" class="btn-brand w-100">
+                  <span>Start a Verified Placement</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       PROFESSIONAL MULTI-COLUMN FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5 pb-5 border-bottom footer-divider">
+        <div class="col-lg-4">
+          <a class="navbar-brand-wrap mb-3" href="index.html">
+            <span class="brand-mark">H</span>
+            <span class="brand-text">
+              <span class="brand-name footer-brand-title">Hearth &amp; Haven</span>
+              <span class="brand-tagline footer-brand-subtitle">Domestic Placement Agency</span>
+            </span>
+          </a>
+          <p class="small mb-4 footer-text-secondary">
+            Connecting discerning households with carefully screened housemaids, home cooks, nannies, babysitters, and elderly caregivers through transparent, ethical placement standards.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/919820011223" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <h5>Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 (Classic)</a></li>
+            <li><a href="home-2.html">Home 2 (Editorial)</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="verification.html">Verification Process</a></li>
+            <li><a href="about.html">About Agency</a></li>
+            <li><a href="contact.html">Contact &amp; Enquiry</a></li>
+            <li><a href="dashboard.html">Client Dashboard</a></li>
+            <li><a href="signup.html">Client Sign Up</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <h5>Staffing Categories</h5>
+          <ul class="footer-links">
+            <li><a href="services.html#full-time-maid">Full-Time Maid Services</a></li>
+            <li><a href="services.html#part-time-maid">Part-Time Maid Services</a></li>
+            <li><a href="services.html#live-in-help">Live-In Domestic Help</a></li>
+            <li><a href="services.html#housekeeping">Professional Housekeeping</a></li>
+            <li><a href="services.html#home-cooks">Verified Home Cooks</a></li>
+            <li><a href="services.html#babysitters-nannies">Babysitters &amp; Nannies</a></li>
+            <li><a href="services.html#elderly-care">Elderly Care Assistance</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+          <h5>Placement Desk</h5>
+          <ul class="list-unstyled small mb-4 footer-text-secondary">
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-geo-alt text-info"></i>
+              <span>Suite 402, Heritage Chambers, Worli, Mumbai 400018</span>
+            </li>
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-telephone text-info"></i>
+              <span>+91 (022) 4890-7200 / +91 98200 11223</span>
+            </li>
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-envelope text-info"></i>
+              <span>placements@hearthandhaven.in</span>
+            </li>
+            <li class="d-flex gap-2">
+              <i class="bi bi-clock text-info"></i>
+              <span>Mon – Sat: 9:00 AM – 7:00 PM</span>
+            </li>
+          </ul>
+
+          <form class="js-newsletter-form" novalidate>
+            <label for="footerEmail4" class="form-label footer-brand-title small mb-1">Download Hiring &amp; Salary Guide</label>
+            <div class="input-group input-group-sm">
+              <input type="email" id="footerEmail4" class="form-control footer-input" placeholder="Your email address" required>
+              <button class="btn btn-info text-white fw-semibold" type="submit">Send</button>
+            </div>
+            <div class="js-newsletter-msg mt-1"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-muted">
+        <div>
+          &copy; 2026 Hearth &amp; Haven Domestic Staffing Pvt. Ltd. All rights reserved.
+        </div>
+        <div class="text-md-end">
+          Verification scope depends on applicable laws, candidate consent, and official record availability. Sample profiles are fictional illustrations.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

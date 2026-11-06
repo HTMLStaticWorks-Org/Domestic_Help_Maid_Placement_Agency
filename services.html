@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domestic Staffing Services | Full-Time Maids, Cooks, Nannies &amp; Elderly Care | Hearth &amp; Haven</title>
+  <meta name="description" content="Explore Hearth & Haven's 7 domestic staffing categories: Full-Time Maids, Part-Time Maids, Live-In Help, Professional Housekeeping, Home Cooks, Babysitters & Nannies, and Elderly Care Assistance.">
+
+  <!-- Pre-paint Theme & RTL Initialization -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('hearth_haven_theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+        var savedDir = localStorage.getItem('hearth_haven_direction');
+        if (savedDir === 'rtl' || savedDir === 'ltr') {
+          document.documentElement.setAttribute('dir', savedDir);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Favicon (Brand Icon) -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       MANDATORY STICKY NAVBAR
+       ======================================================================== -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-xl site-navbar" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand-wrap" href="index.html">
+          <span class="brand-mark">H</span>
+          <span class="brand-text">
+            <span class="brand-name">Hearth &amp; Haven</span>
+            <span class="brand-tagline">Domestic Placement Agency</span>
+          </span>
+        </a>
+
+        <div class="d-flex align-items-center gap-2 d-xl-none">
+          <button type="button" class="rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Toggle color theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button class="navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-4"></i>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="mainNavbarCollapse">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Home
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                <li>
+                  <a class="dropdown-item" href="index.html">
+                    <span>Home 1 — Classic Agency</span>
+                    <span class="dropdown-badge">Default</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="home-2.html">
+                    <span>Home 2 — Editorial &amp; Finder</span>
+                    <span class="dropdown-badge">Demo 2</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="verification.html">Verification Process</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <!-- Dashboard Menu beside Contact -->
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+          </ul>
+
+          <div class="navbar-actions">
+            <a href="signup.html" class="nav-signup-btn">Sign Up</a>
+            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+            <button type="button" class="theme-toggle-btn d-none d-xl-inline-flex" data-theme-toggle aria-label="Toggle color theme">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         PAGE HERO
+         ====================================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="row align-items-center g-4 js-gsap-reveal">
+          <div class="col-lg-8">
+            <span class="eyebrow-badge">7 Specialized Staffing Categories</span>
+            <h1 class="display-hero mb-3">Domestic Staffing Services Tailored to Your Home</h1>
+            <p class="section-subtitle mb-4">
+              Whether you need daily apartment upkeep, a skilled family home cook, an attentive infant nanny, or 24-hour senior care companionship, we match verified professionals to your household's specific requirements.
+            </p>
+            <!-- Quick Jump Pills -->
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#full-time-maid" class="profile-filter-btn">1. Full-Time Maids</a>
+              <a href="#part-time-maid" class="profile-filter-btn">2. Part-Time Maids</a>
+              <a href="#live-in-help" class="profile-filter-btn">3. Live-In Help</a>
+              <a href="#housekeeping" class="profile-filter-btn">4. Housekeeping</a>
+              <a href="#home-cooks" class="profile-filter-btn">5. Home Cooks</a>
+              <a href="#babysitters-nannies" class="profile-filter-btn">6. Nannies</a>
+              <a href="#elderly-care" class="profile-filter-btn">7. Elderly Care</a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="p-4 rounded-4 shadow-sm" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+              <h2 class="h6 mb-2"><i class="bi bi-shield-check me-2" style="color: var(--accent-teal);"></i>Every Placement Includes:</h2>
+              <ul class="list-unstyled small mb-3">
+                <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Verified Govt ID &amp; Dual Address Check</li>
+                <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Prior Employer Reference Interviews</li>
+                <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>2- to 3-Day Supervised Home Trial</li>
+                <li class="mb-0"><i class="bi bi-check2 text-success me-2"></i>6-Month Written Replacement Policy</li>
+              </ul>
+              <a href="contact.html#enquiry-form" class="btn-brand btn-sm w-100">Request Custom Shortlist</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7 DETAILED SERVICE SHOWCASE BLOCKS
+         ====================================================================== -->
+    <section class="section-py">
+      <div class="container">
+
+        <!-- 1. FULL-TIME MAID SERVICES -->
+        <article class="service-showcase-card" id="full-time-maid">
+          <div class="row g-0 align-items-stretch">
+            <div class="col-lg-5">
+              <div class="service-showcase-img">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80" alt="Full-Time Maid Services maintaining clean residential living room">
+              </div>
+            </div>
+            <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                  <span class="eyebrow-badge mb-0">Category 01 • Daily Shift (8–10 Hours)</span>
+                  <span class="badge rounded-pill" style="background-color: var(--verified-bg); color: var(--verified-green);">Most Requested</span>
+                </div>
+                <h2 class="h3 mb-3">Full-Time Maid Services</h2>
+                <p class="mb-4">
+                  Our full-time housemaids provide structured, full-day domestic support (typically 8:00 AM to 6:00 PM or 9:00 AM to 7:00 PM) so your residence stays immaculate without disrupting your family's privacy overnight.
+                </p>
+
+                <h3 class="h6 mb-2">Typical Responsibilities</h3>
+                <ul class="responsibility-list mb-4">
+                  <li><i class="bi bi-check-circle-fill"></i> Daily sweeping, mopping, and vacuuming of all rooms</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Bathroom &amp; washroom sanitation and towel changes</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Machine &amp; hand laundry, drying, folding, and steam ironing</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Kitchen counter cleaning, utensil washing, and vegetable prep</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Dusting furniture, windowsills, and organizing wardrobes</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Receiving grocery deliveries and maintaining pantry order</li>
+                </ul>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-people me-1" style="color: var(--accent-teal);"></i>Service Suitability</div>
+                      <p class="small mb-0">Ideal for 2 to 5 BHK family residences, dual-income couples, and households with children or pets requiring consistent all-day upkeep.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-award me-1" style="color: var(--accent-teal);"></i>Key Benefits</div>
+                      <p class="small mb-0">Single reliable helper for all daily chores, fixed arrival/departure discipline, and no live-in accommodation required.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                <a href="contact.html?category=Full-Time+Maid+Services&schedule=Full-Time+(Day+Shift)#enquiry-form" class="btn-brand">
+                  <span>Find a Full-Time Maid</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="verification.html" class="btn-outline-brand">
+                  <span>View Screening Standards</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. PART-TIME MAID SERVICES -->
+        <article class="service-showcase-card" id="part-time-maid">
+          <div class="row g-0 align-items-stretch flex-lg-row-reverse">
+            <div class="col-lg-5">
+              <div class="service-showcase-img">
+                <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=80" alt="Part-Time Maid organizing modern apartment surfaces">
+              </div>
+            </div>
+            <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between">
+              <div>
+                <span class="eyebrow-badge">Category 02 • Dedicated Slot (2–5 Hours)</span>
+                <h2 class="h3 mb-3">Part-Time Maid Services</h2>
+                <p class="mb-4">
+                  Designed for apartments and busy professionals who need dependable daily assistance during fixed morning or evening hours without committing to a full-day shift.
+                </p>
+
+                <h3 class="h6 mb-2">Typical Responsibilities</h3>
+                <ul class="responsibility-list mb-4">
+                  <li><i class="bi bi-check-circle-fill"></i> Daily floor sweeping, wet mopping, and surface dusting</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Dishwashing and kitchen slab/sink sanitation</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Loading laundry machine, drying clothes, and basic folding</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Scheduled bathroom cleaning and trash disposal</li>
+                </ul>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-people me-1" style="color: var(--accent-teal);"></i>Service Suitability</div>
+                      <p class="small mb-0">Best suited for 1 to 3 BHK apartments, single professionals, and young couples who spend most of the day at work.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-award me-1" style="color: var(--accent-teal);"></i>Key Benefits</div>
+                      <p class="small mb-0">Cost-effective monthly structure, neighborhood-proximate candidates for high punctuality, and verified local address records.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                <a href="contact.html?category=Part-Time+Maid+Services&schedule=Part-Time+(Morning+/+Evening)#enquiry-form" class="btn-brand">
+                  <span>Find a Part-Time Helper</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="contact.html#enquiry-form" class="btn-outline-brand">
+                  <span>Enquire About Timings</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. LIVE-IN DOMESTIC HELP -->
+        <article class="service-showcase-card" id="live-in-help">
+          <div class="row g-0 align-items-stretch">
+            <div class="col-lg-5">
+              <div class="service-showcase-img">
+                <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=900&q=80" alt="Live-in domestic helper providing comprehensive family care">
+              </div>
+            </div>
+            <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between">
+              <div>
+                <span class="eyebrow-badge">Category 03 • 24-Hour Residential Support</span>
+                <h2 class="h3 mb-3">Live-In Domestic Help</h2>
+                <p class="mb-4">
+                  Our live-in domestic helpers reside within your household premises, providing round-the-clock dependability for families with early mornings, late work schedules, young children, or senior family members.
+                </p>
+
+                <h3 class="h6 mb-2">Typical Responsibilities</h3>
+                <ul class="responsibility-list mb-4">
+                  <li><i class="bi bi-check-circle-fill"></i> Comprehensive morning-to-evening household cleaning</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Early morning tea/breakfast prep &amp; evening kitchen support</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Complete family laundry, ironing, and bed-making</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Assisting with children's routines or senior family members</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Accompanying family during travel or domestic relocations</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Maintaining home security awareness when family is away</li>
+                </ul>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-people me-1" style="color: var(--accent-teal);"></i>Service Suitability</div>
+                      <p class="small mb-0">Ideal for large family homes, villas, working parents with infants, and households with dedicated staff quarters or private sleeping space.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-award me-1" style="color: var(--accent-teal);"></i>Key Benefits</div>
+                      <p class="small mb-0">Zero daily commute delays, permanent address &amp; family guardian verification, and clearly defined rest hours &amp; leave calendars.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                <a href="contact.html?category=Live-In+Domestic+Help&schedule=Live-In+(24-Hour+Support)#enquiry-form" class="btn-brand">
+                  <span>Find a Live-In Helper</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="verification.html" class="btn-outline-brand">
+                  <span>Live-In Screening Protocol</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. PROFESSIONAL HOUSEKEEPING -->
+        <article class="service-showcase-card" id="housekeeping">
+          <div class="row g-0 align-items-stretch flex-lg-row-reverse">
+            <div class="col-lg-5">
+              <div class="service-showcase-img">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Luxury home interior maintained by professional executive housekeeper">
+              </div>
+            </div>
+            <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between">
+              <div>
+                <span class="eyebrow-badge">Category 04 • Hospitality-Grade Residence Upkeep</span>
+                <h2 class="h3 mb-3">Professional Housekeeping</h2>
+                <p class="mb-4">
+                  For fine residences, penthouses, and estates with delicate materials, our hospitality-trained executive housekeepers bring hotel-standard attention to surface conservation, linen care, and formal etiquette.
+                </p>
+
+                <h3 class="h6 mb-2">Typical Responsibilities</h3>
+                <ul class="responsibility-list mb-4">
+                  <li><i class="bi bi-check-circle-fill"></i> Specialized care for Italian marble, hardwood, and brassware</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Delicate couture wardrobe care, steaming, and shoe care</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Formal table setting, guest reception, and refreshment service</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Managing household consumables &amp; supervising maintenance staff</li>
+                </ul>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-people me-1" style="color: var(--accent-teal);"></i>Service Suitability</div>
+                      <p class="small mb-0">Tailored for luxury apartments, duplexes, diplomatic residences, and families who frequently host guests.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-award me-1" style="color: var(--accent-teal);"></i>Key Benefits</div>
+                      <p class="small mb-0">Candidates tested on chemical-safe surface care, discreet professional demeanor, and prior luxury estate references.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                <a href="contact.html?category=Professional+Housekeeping&schedule=Full-Time+(Day+Shift)#enquiry-form" class="btn-brand">
+                  <span>Find an Executive Housekeeper</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="contact.html#enquiry-form" class="btn-outline-brand">
+                  <span>Request Consultation</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. HOME COOKS -->
+        <article class="service-showcase-card" id="home-cooks">
+          <div class="row g-0 align-items-stretch">
+            <div class="col-lg-5">
+              <div class="service-showcase-img">
+                <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=80" alt="Verified family home cook preparing fresh healthy meals">
+              </div>
+            </div>
+            <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between">
+              <div>
+                <span class="eyebrow-badge">Category 05 • Culinary &amp; Dietary Specialists</span>
+                <h2 class="h3 mb-3">Home Cooks</h2>
+                <p class="mb-4">
+                  Enjoy wholesome, freshly prepared meals every day without kitchen stress. Our home cooks are evaluated for personal hygiene, culinary versatility, spice control, and organized kitchen management.
+                </p>
+
+                <h3 class="h6 mb-2">Typical Responsibilities</h3>
+                <ul class="responsibility-list mb-4">
+                  <li><i class="bi bi-check-circle-fill"></i> Preparing fresh breakfast, lunch, school tiffins, and dinner</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Regional Indian (North, South, Gujarati, Bengali, Maharashtrian)</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Continental, salads, soups, and high-protein or low-oil diets</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Sanitizing produce, organizing fridge storage, and grocery lists</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Maintaining clean stovetops, appliances, and prep counters</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Adapting meals for seniors, toddlers, or Jain/vegan rules</li>
+                </ul>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-people me-1" style="color: var(--accent-teal);"></i>Service Suitability</div>
+                      <p class="small mb-0">Available as twice-daily part-time cooks (morning &amp; evening slots), full-time kitchen managers, or live-in family cooks.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-award me-1" style="color: var(--accent-teal);"></i>Key Benefits</div>
+                      <p class="small mb-0">Live cooking trial before final confirmation, strict personal hygiene standards, and zero reliance on outside takeout.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                <a href="contact.html?category=Home+Cooks&schedule=Part-Time+(Morning+/+Evening)#enquiry-form" class="btn-brand">
+                  <span>Find a Home Cook</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="contact.html#enquiry-form" class="btn-outline-brand">
+                  <span>Book a Cooking Trial</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. BABYSITTERS AND NANNIES -->
+        <article class="service-showcase-card" id="babysitters-nannies">
+          <div class="row g-0 align-items-stretch flex-lg-row-reverse">
+            <div class="col-lg-5">
+              <div class="service-showcase-img">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=900&q=80" alt="Experienced nanny caring for toddler with educational activities">
+              </div>
+            </div>
+            <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between">
+              <div>
+                <span class="eyebrow-badge">Category 06 • Infant, Toddler &amp; After-School Care</span>
+                <h2 class="h3 mb-3">Babysitters and Nannies</h2>
+                <p class="mb-4">
+                  Childcare placements demand our highest level of reference scrutiny and temperament evaluation. We place patient, affectionate nannies and babysitters who prioritize child safety, hygiene, and developmental routines.
+                </p>
+
+                <h3 class="h6 mb-2">Typical Responsibilities</h3>
+                <ul class="responsibility-list mb-4">
+                  <li><i class="bi bi-check-circle-fill"></i> Infant feeding, burping, bottle sterilization &amp; weaning prep</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Oil massage, warm bathing, diapering, and sleep routines</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Engaging toddlers in storybooks, puzzles, and park visits</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Sanitizing toys, washing baby garments, and nursery upkeep</li>
+                  <li><i class="bi bi-check-circle-fill"></i> School bus pick-up/drop-off and after-school snack routines</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Maintaining daily feeding &amp; activity logs for working parents</li>
+                </ul>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-people me-1" style="color: var(--accent-teal);"></i>Service Suitability</div>
+                      <p class="small mb-0">Working parents returning from parental leave, families with twins, and households seeking dedicated 10-hour day or 24-hour live-in nannies.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-award me-1" style="color: var(--accent-teal);"></i>Key Benefits</div>
+                      <p class="small mb-0">Mandatory verification of at least 2 prior childcare employer references, hygiene screening, and supervised parent-present trial days.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                <a href="contact.html?category=Babysitters+and+Nannies&schedule=Full-Time+(Day+Shift)#enquiry-form" class="btn-brand">
+                  <span>Find a Verified Nanny</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="verification.html" class="btn-outline-brand">
+                  <span>Childcare Screening Steps</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. ELDERLY CARE ASSISTANCE -->
+        <article class="service-showcase-card mb-0" id="elderly-care">
+          <div class="row g-0 align-items-stretch">
+            <div class="col-lg-5">
+              <div class="service-showcase-img">
+                <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=900&q=80" alt="Compassionate elderly caregiver assisting senior citizen at home">
+              </div>
+            </div>
+            <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-between">
+              <div>
+                <span class="eyebrow-badge">Category 07 • Dignified Senior Care &amp; Companionship</span>
+                <h2 class="h3 mb-3">Elderly Care Assistance</h2>
+                <p class="mb-4">
+                  Supporting aging parents at home requires patience, physical attentiveness, and emotional warmth. Our male and female senior care attendants provide reliable non-medical daily assistance and reassuring companionship.
+                </p>
+
+                <h3 class="h6 mb-2">Typical Responsibilities</h3>
+                <ul class="responsibility-list mb-4">
+                  <li><i class="bi bi-check-circle-fill"></i> Walking support, fall prevention, and wheelchair transfers</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Timely medication reminders, hydration, and meal assistance</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Dignified assistance with bathing, grooming, and dressing</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Assisting with prescribed home physiotherapy exercises</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Logging basic daily vitals (BP, blood sugar, temperature)</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Accompanying seniors to clinic visits, parks, and social outings</li>
+                </ul>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-people me-1" style="color: var(--accent-teal);"></i>Service Suitability</div>
+                      <p class="small mb-0">Available in 12-hour day shifts, 12-hour night shifts, or 24-hour live-in arrangements for seniors living with family or independently.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 h-100" style="background-color: var(--bg-secondary);">
+                      <div class="fw-bold small mb-1" style="color: var(--text-primary);"><i class="bi bi-award me-1" style="color: var(--accent-teal);"></i>Key Benefits</div>
+                      <p class="small mb-0">Screened for calm temperament, emergency escalation awareness, and verified prior senior-care family references.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                <a href="contact.html?category=Elderly+Care+Assistance&schedule=Live-In+(24-Hour+Support)#enquiry-form" class="btn-brand">
+                  <span>Find an Elderly Caregiver</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="contact.html#enquiry-form" class="btn-outline-brand">
+                  <span>Speak With Senior Care Desk</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SCHEDULE & ENGAGEMENT MODEL COMPARISON TABLE
+         ====================================================================== -->
+    <section class="section-py bg-ivory-alt">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 680px;">
+          <span class="eyebrow-badge">Compare Work Arrangements</span>
+          <h2 class="section-title">Choosing the Right Shift Structure</h2>
+          <p class="section-subtitle mx-auto">
+            Not sure whether your household needs a part-time slot, full-time day helper, or 24-hour live-in staff member? Compare our three placement models below.
+          </p>
+        </div>
+
+        <div class="table-responsive comparison-table shadow-sm">
+          <table class="table mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Placement Dimension</th>
+                <th scope="col">Part-Time Slot</th>
+                <th scope="col" style="color: var(--accent-teal);">Full-Time Day Shift</th>
+                <th scope="col">24-Hour Live-In</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-semibold">Typical Daily Hours</td>
+                <td>2 to 5 Hours (Morning or Evening)</td>
+                <td>8 to 10 Hours (e.g., 9 AM – 6 PM)</td>
+                <td>Residential (With scheduled afternoon &amp; night rest)</td>
+              </tr>
+              <tr>
+                <td class="fw-semibold">Accommodation &amp; Meals</td>
+                <td>Tea/snack only; commutes daily</td>
+                <td>Daytime tea &amp; lunch; commutes daily</td>
+                <td>Private sleeping space, washroom access &amp; daily meals</td>
+              </tr>
+              <tr>
+                <td class="fw-semibold">Weekly / Monthly Offs</td>
+                <td>4 paid weekly offs per month</td>
+                <td>4 paid weekly offs per month</td>
+                <td>2 days off per month (or accumulated quarterly leave)</td>
+              </tr>
+              <tr>
+                <td class="fw-semibold">Verification Depth</td>
+                <td>ID, Local Address &amp; Reference Check</td>
+                <td>8-Stage Verification &amp; Skill Audit</td>
+                <td>Enhanced Permanent Address, Guardian &amp; Reference Audit</td>
+              </tr>
+              <tr>
+                <td class="fw-semibold">Replacement Support</td>
+                <td>6-Month Replacement Assurance</td>
+                <td>6-Month Replacement Assurance</td>
+                <td>6-Month Replacement Assurance</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         BOTTOM CTA
+         ====================================================================== -->
+    <section class="section-py-sm">
+      <div class="container">
+        <div class="p-4 p-md-5 rounded-4 shadow-lg" style="background: linear-gradient(135deg, #132238 0%, #1F636C 100%); color: #FAF8F5;">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <h2 class="section-title text-white mb-2">Need a Combination of Roles or Custom Timings?</h2>
+              <p class="mb-0" style="color: rgba(250, 248, 245, 0.85);">
+                Many families pair a full-time housemaid with a part-time cook, or hire a nanny-cum-housekeeper. Let our placement counselors design a tailored staffing plan for your home.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="contact.html#enquiry-form" class="btn-light-editorial">
+                <span>Submit Your Requirement</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       PROFESSIONAL MULTI-COLUMN FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5 pb-5 border-bottom footer-divider">
+        <div class="col-lg-4">
+          <a class="navbar-brand-wrap mb-3" href="index.html">
+            <span class="brand-mark">H</span>
+            <span class="brand-text">
+              <span class="brand-name footer-brand-title">Hearth &amp; Haven</span>
+              <span class="brand-tagline footer-brand-subtitle">Domestic Placement Agency</span>
+            </span>
+          </a>
+          <p class="small mb-4 footer-text-secondary">
+            Connecting discerning households with carefully screened housemaids, home cooks, nannies, babysitters, and elderly caregivers through transparent, ethical placement standards.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/919820011223" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <h5>Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 (Classic)</a></li>
+            <li><a href="home-2.html">Home 2 (Editorial)</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="verification.html">Verification Process</a></li>
+            <li><a href="about.html">About Agency</a></li>
+            <li><a href="contact.html">Contact &amp; Enquiry</a></li>
+            <li><a href="dashboard.html">Client Dashboard</a></li>
+            <li><a href="signup.html">Client Sign Up</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <h5>Staffing Categories</h5>
+          <ul class="footer-links">
+            <li><a href="services.html#full-time-maid">Full-Time Maid Services</a></li>
+            <li><a href="services.html#part-time-maid">Part-Time Maid Services</a></li>
+            <li><a href="services.html#live-in-help">Live-In Domestic Help</a></li>
+            <li><a href="services.html#housekeeping">Professional Housekeeping</a></li>
+            <li><a href="services.html#home-cooks">Verified Home Cooks</a></li>
+            <li><a href="services.html#babysitters-nannies">Babysitters &amp; Nannies</a></li>
+            <li><a href="services.html#elderly-care">Elderly Care Assistance</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+          <h5>Placement Desk</h5>
+          <ul class="list-unstyled small mb-4 footer-text-secondary">
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-geo-alt text-info"></i>
+              <span>Suite 402, Heritage Chambers, Worli, Mumbai 400018</span>
+            </li>
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-telephone text-info"></i>
+              <span>+91 (022) 4890-7200 / +91 98200 11223</span>
+            </li>
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-envelope text-info"></i>
+              <span>placements@hearthandhaven.in</span>
+            </li>
+            <li class="d-flex gap-2">
+              <i class="bi bi-clock text-info"></i>
+              <span>Mon – Sat: 9:00 AM – 7:00 PM</span>
+            </li>
+          </ul>
+
+          <form class="js-newsletter-form" novalidate>
+            <label for="footerEmail3" class="form-label footer-brand-title small mb-1">Download Hiring &amp; Salary Guide</label>
+            <div class="input-group input-group-sm">
+              <input type="email" id="footerEmail3" class="form-control footer-input" placeholder="Your email address" required>
+              <button class="btn btn-info text-white fw-semibold" type="submit">Send</button>
+            </div>
+            <div class="js-newsletter-msg mt-1"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-muted">
+        <div>
+          &copy; 2026 Hearth &amp; Haven Domestic Staffing Pvt. Ltd. All rights reserved.
+        </div>
+        <div class="text-md-end">
+          Verification scope depends on applicable laws, candidate consent, and official record availability. Sample profiles are fictional illustrations.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

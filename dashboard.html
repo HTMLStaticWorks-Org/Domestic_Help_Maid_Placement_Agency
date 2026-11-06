@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Placement Dashboard | Hearth &amp; Haven Domestic Staffing</title>
+  <meta name="description" content="Manage your household staffing: request verified helpers, inspect candidate dossiers, track placement milestones, and manage direct payment schedules.">
+
+  <!-- Pre-paint Theme & RTL Initialization -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('hearth_haven_theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+        var savedDir = localStorage.getItem('hearth_haven_direction');
+        if (savedDir === 'rtl' || savedDir === 'ltr') {
+          document.documentElement.setAttribute('dir', savedDir);
+        }
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- Favicon (Brand Icon) -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Full-Height Left Sidebar Layout for Client Placement Dashboard -->
+  <div class="dashboard-app-layout">
+    <!-- ======================================================================
+         LEFT SIDEBAR MENU (TOP TO BOTTOM OF PAGE)
+         ====================================================================== -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar" aria-label="Client Dashboard Navigation">
+      <!-- Top Brand Header (Retaining Brand Name in Same Top-Left Place) -->
+      <div class="sidebar-brand-header">
+        <a class="navbar-brand-wrap" href="index.html">
+          <span class="brand-mark">H</span>
+          <span class="brand-text">
+            <span class="brand-name">Hearth &amp; Haven</span>
+            <span class="brand-tagline">Domestic Placement Agency</span>
+          </span>
+        </a>
+        <!-- Mobile Sidebar Close Button -->
+        <button type="button" class="sidebar-close-btn d-lg-none" id="sidebarCloseBtn" aria-label="Close sidebar menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <!-- Verified Household Client Summary Card -->
+      <div class="sidebar-client-profile">
+        <div class="sidebar-avatar">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <div class="sidebar-client-info">
+          <div class="sidebar-client-name">Vikramaditya &amp; Priya</div>
+          <div class="sidebar-client-meta">
+            <i class="bi bi-patch-check-fill text-success me-1"></i>Verified Client #4809
+          </div>
+        </div>
+      </div>
+
+      <!-- Side Menu Navigation Links (From Top to Bottom) -->
+      <nav class="sidebar-nav" aria-label="Dashboard Side Navigation">
+        <div class="sidebar-section-label">Placement Management</div>
+        <button type="button" class="sidebar-nav-item active" data-dashboard-tab="tab-overview">
+          <i class="bi bi-grid-1x2-fill"></i>
+          <span>Overview &amp; Staff</span>
+        </button>
+        <button type="button" class="sidebar-nav-item" data-dashboard-tab="tab-request">
+          <i class="bi bi-person-plus-fill"></i>
+          <span>Request a Helper</span>
+          <span class="badge rounded-pill bg-teal-subtle ms-auto">New</span>
+        </button>
+        <button type="button" class="sidebar-nav-item" data-dashboard-tab="tab-profiles">
+          <i class="bi bi-person-badge-fill"></i>
+          <span>Verified Profiles</span>
+          <span class="badge rounded-pill bg-teal-subtle ms-auto">3</span>
+        </button>
+        <button type="button" class="sidebar-nav-item" data-dashboard-tab="tab-tracking">
+          <i class="bi bi-signpost-split-fill"></i>
+          <span>Track Placements</span>
+        </button>
+        <button type="button" class="sidebar-nav-item" data-dashboard-tab="tab-payments">
+          <i class="bi bi-credit-card-2-front-fill"></i>
+          <span>Payments &amp; Billing</span>
+        </button>
+      </nav>
+
+      <!-- Logout Button in Side Menu -->
+      <div class="sidebar-footer">
+        <a href="login.html" class="sidebar-logout-btn" title="Sign out of client dashboard">
+          <i class="bi bi-box-arrow-right"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Main Content Area on Right -->
+    <div class="dashboard-main-area">
+      <!-- Dashboard Top Header Bar (Controls & Breadcrumbs) -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="sidebar-toggle-btn d-lg-none" id="sidebarOpenBtn" aria-label="Open sidebar menu">
+            <i class="bi bi-list fs-4"></i>
+          </button>
+          <div class="dashboard-portal-title">
+            <span class="fw-bold">Client Placement Portal</span>
+            <span class="text-muted ms-2 small d-none d-sm-inline">| Client ID: #HH-CL-4809 &bull; Worli, Mumbai</span>
+          </div>
+        </div>
+
+        <!-- Right Controls: RTL Button, Theme Toggle, Quick Logout -->
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Toggle color theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <a href="login.html" class="btn-outline-brand btn-sm d-none d-md-inline-flex align-items-center gap-2 py-1 px-3" title="Log out of account">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Body Content -->
+      <main class="dashboard-content-body">
+        <div class="container-fluid px-0">
+          <!-- Welcome Hero Banner -->
+          <div class="row align-items-center justify-content-between g-4 mb-4 js-gsap-reveal">
+            <div class="col-lg-8">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge rounded-pill" style="background-color: var(--verified-bg); color: var(--verified-green);">
+                  <i class="bi bi-patch-check-fill me-1"></i>Verified Household Client
+                </span>
+                <span class="small text-muted">Client ID: #HH-CL-4809 &bull; Worli, Mumbai</span>
+              </div>
+              <h1 class="display-6 fw-bold mb-2">Welcome Back, Vikramaditya &amp; Priya Mehta</h1>
+              <p class="section-subtitle mb-0">
+                Manage your domestic staffing requirements, review candidate verification dossiers, track trial milestones, and monitor direct helper wage schedules.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+                <button type="button" class="btn-brand btn-sm py-2 px-3" data-dashboard-tab="tab-request">
+                  <i class="bi bi-plus-circle me-1"></i>Request New Helper
+                </button>
+                <a href="contact.html" class="btn-outline-brand btn-sm py-2 px-3">
+                  <i class="bi bi-telephone me-1"></i>Call Counselor
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPI Metrics Grid -->
+          <div class="row g-3 mb-5">
+            <div class="col-sm-6 col-lg-3">
+              <div class="dashboard-stat-card">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="small text-muted fw-semibold">Active Placements</span>
+                  <span class="rounded-circle p-2" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);"><i class="bi bi-person-check fs-5"></i></span>
+                </div>
+                <div class="h3 fw-bold mb-1">1 Staff Member</div>
+                <div class="small" style="color: var(--verified-green);"><i class="bi bi-shield-check me-1"></i>6-Month Replacement Active</div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="dashboard-stat-card">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="small text-muted fw-semibold">In Supervised Trial</span>
+                  <span class="rounded-circle p-2" style="background-color: var(--warning-bg); color: var(--warning-amber);"><i class="bi bi-stopwatch fs-5"></i></span>
+                </div>
+                <div class="h3 fw-bold mb-1">1 Candidate</div>
+                <div class="small text-muted">Home Cook &bull; Day 2 of 3 Trial</div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="dashboard-stat-card">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="small text-muted fw-semibold">Verified Dossiers</span>
+                  <span class="rounded-circle p-2" style="background-color: var(--bg-sage-soft); color: var(--accent-sage);"><i class="bi bi-file-earmark-medical fs-5"></i></span>
+                </div>
+                <div class="h3 fw-bold mb-1">3 Shortlisted</div>
+                <div class="small" style="color: var(--accent-teal);"><i class="bi bi-check2-circle me-1"></i>All 8 Screening Steps Logged</div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="dashboard-stat-card">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="small text-muted fw-semibold">Next Wage Due</span>
+                  <span class="rounded-circle p-2" style="background-color: var(--accent-warm-soft); color: var(--accent-warm);"><i class="bi bi-calendar-event fs-5"></i></span>
+                </div>
+                <div class="h3 fw-bold mb-1">1st of Month</div>
+                <div class="small text-muted">Direct to Staff Account (0% Agency Cut)</div>
+              </div>
+            </div>
+          </div>
+
+        <!-- PANE 1: OVERVIEW & ACTIVE STAFF -->
+        <div class="dashboard-pane" data-dashboard-pane="tab-overview">
+          <div class="row g-4">
+            <!-- Left: Current Active Staff Card -->
+            <div class="col-lg-7">
+              <div class="p-4 rounded-4 shadow-sm h-100" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <span class="badge rounded-pill mb-1" style="background-color: var(--verified-bg); color: var(--verified-green);">Active In Household</span>
+                    <h2 class="h4 mb-0">Meera Nair <span class="small fw-normal text-muted">(Senior Housemaid)</span></h2>
+                  </div>
+                  <span class="badge rounded-pill" style="background-color: var(--bg-secondary); color: var(--text-secondary);">Placed: 14 Oct 2025</span>
+                </div>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-sm-4">
+                    <div class="p-3 rounded-3" style="background-color: var(--bg-secondary);">
+                      <div class="small text-muted">Duty Shift</div>
+                      <div class="fw-semibold small">Full-Time (9 AM – 6 PM)</div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="p-3 rounded-3" style="background-color: var(--bg-secondary);">
+                      <div class="small text-muted">Weekly Off</div>
+                      <div class="fw-semibold small">Every Sunday</div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="p-3 rounded-3" style="background-color: var(--bg-secondary);">
+                      <div class="small text-muted">Replacement Cover</div>
+                      <div class="fw-semibold small text-success">Active (128 Days Left)</div>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="h6 mb-2">Scope of Household Responsibilities</h3>
+                <ul class="list-unstyled small mb-4">
+                  <li class="mb-1"><i class="bi bi-check2 text-success me-2"></i>Daily sweeping, vacuuming, mopping 4-BHK residence</li>
+                  <li class="mb-1"><i class="bi bi-check2 text-success me-2"></i>Delicate fabric laundry, linen changes &amp; steam ironing</li>
+                  <li class="mb-1"><i class="bi bi-check2 text-success me-2"></i>Kitchen counter wipe-down, utensil sterilization, pantry restock</li>
+                </ul>
+
+                <div class="d-flex flex-wrap gap-2 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <button type="button" class="btn-outline-brand btn-sm" data-dossier-id="meera-nair">
+                    <i class="bi bi-file-earmark-medical me-1"></i>View Full Verification Dossier
+                  </button>
+                  <a href="contact.html?ref=Meera+Nair+Feedback#enquiry-form" class="btn-outline-brand btn-sm">
+                    <i class="bi bi-chat-dots me-1"></i>Counselor Check-In
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Active Trial Spotlight & Quick Actions -->
+            <div class="col-lg-5">
+              <div class="d-flex flex-column gap-4 h-100">
+                <!-- Active Trial Card -->
+                <div class="p-4 rounded-4 shadow-sm" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="badge rounded-pill" style="background-color: var(--warning-bg); color: var(--warning-amber);">Supervised Home Trial</span>
+                    <span class="small fw-semibold text-warning"><i class="bi bi-hourglass-split me-1"></i>Day 2 of 3</span>
+                  </div>
+                  <h3 class="h5 mb-1">Rajesh Sharma <span class="small fw-normal text-muted">(Family Home Cook)</span></h3>
+                  <p class="small text-muted mb-3">Trial Slot: Morning (7:30 AM – 10:30 AM) &amp; Evening (6:30 PM – 9:00 PM)</p>
+
+                  <div class="p-3 rounded-3 mb-3 small" style="background-color: var(--bg-secondary);">
+                    <strong>Trial Goal:</strong> Evaluate healthy Gujarati &amp; Continental meals, spice calibration, and kitchen hygiene.
+                  </div>
+
+                  <div class="d-flex gap-2">
+                    <button type="button" class="btn-brand btn-sm flex-grow-1" data-dossier-id="rajesh-sharma">
+                      Inspect Dossier
+                    </button>
+                    <a href="contact.html?ref=Rajesh+Sharma+Trial+Confirm#enquiry-form" class="btn-outline-brand btn-sm flex-grow-1">
+                      Finalize Placement
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Assigned Counselor Card -->
+                <div class="p-4 rounded-4" style="background-color: var(--bg-navy); color: #FAF8F5;">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=200&q=80" alt="Counselor photo" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+                    <div>
+                      <div class="small" style="color: var(--accent-warm);">Dedicated Placement Counselor</div>
+                      <h4 class="h6 text-white mb-0">Nandini Kulkarni</h4>
+                      <div class="small" style="color: #C2CEDC;">+91 (022) 4890-7200 • Ext 104</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 2: REQUEST A HELPER FORM -->
+        <div class="dashboard-pane d-none" data-dashboard-pane="tab-request">
+          <div class="form-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+              <div>
+                <span class="eyebrow-badge mb-1">Interactive Request Builder</span>
+                <h2 class="h3 mb-0">Submit a New Helper Requirement</h2>
+              </div>
+              <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Counselor Match Within 48 Hrs</span>
+            </div>
+            <p class="small mb-4">
+              Configure your household staffing brief. Our placement desk will shortlist 2 to 4 candidates who match your required skills, shift hours, language, and dietary preferences.
+            </p>
+
+            <form id="dashboardRequestForm" class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="dashRole" class="form-label">1. Desired Helper Category <span class="text-danger">*</span></label>
+                  <select id="dashRole" name="requestedRole" class="form-select" required>
+                    <option value="" selected disabled>Choose staffing category...</option>
+                    <option value="Full-Time Maid Services">Full-Time Maid Services</option>
+                    <option value="Part-Time Maid Services">Part-Time Maid Services</option>
+                    <option value="Live-In Domestic Help">Live-In Domestic Help (24-Hour)</option>
+                    <option value="Professional Housekeeping">Professional Housekeeping</option>
+                    <option value="Home Cooks">Family Home Cook</option>
+                    <option value="Babysitters and Nannies">Babysitters &amp; Infant Nannies</option>
+                    <option value="Elderly Care Assistance">Elderly Care &amp; Mobility Attendant</option>
+                  </select>
+                  <div class="invalid-feedback">Please choose a category.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="dashShift" class="form-label">2. Work Shift Arrangement <span class="text-danger">*</span></label>
+                  <select id="dashShift" name="requestedShift" class="form-select" required>
+                    <option value="" selected disabled>Choose shift timing...</option>
+                    <option value="Full-Time Day (9 AM – 6 PM)">Full-Time Day (8–10 Hours)</option>
+                    <option value="Morning Part-Time Slot (7 AM – 11 AM)">Morning Part-Time Slot</option>
+                    <option value="Evening Part-Time Slot (4 PM – 8 PM)">Evening Part-Time Slot</option>
+                    <option value="24-Hour Live-In Residential">24-Hour Live-In (Staff Room Required)</option>
+                    <option value="12-Hour Night Care Shift">12-Hour Night Shift (Elder/Infant Care)</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a shift structure.</div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="dashResidenceSize" class="form-label">3. Residence Size</label>
+                  <select id="dashResidenceSize" class="form-select">
+                    <option value="2 BHK Apartment">2 BHK Apartment</option>
+                    <option value="3 BHK Apartment">3 BHK Apartment</option>
+                    <option value="4+ BHK Residence" selected>4+ BHK Residence</option>
+                    <option value="Duplex / Penthouse">Duplex / Penthouse</option>
+                    <option value="Independent Villa / Bungalow">Independent Villa / Bungalow</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="dashLanguage" class="form-label">4. Preferred Languages</label>
+                  <input type="text" id="dashLanguage" class="form-control" placeholder="e.g., Hindi, English, Marathi, Gujarati" value="Hindi, English">
+                </div>
+
+                <div class="col-md-4">
+                  <label for="dashStartDate" class="form-label">5. Target Start Date <span class="text-danger">*</span></label>
+                  <input type="date" id="dashStartDate" class="form-control" required>
+                  <div class="invalid-feedback">Please select a target start date.</div>
+                </div>
+
+                <div class="col-12">
+                  <label for="dashInstructions" class="form-label">6. Special Household Requirements &amp; Routines</label>
+                  <textarea id="dashInstructions" rows="3" class="form-control" placeholder="Mention pet friendliness, cooking style (Jain, vegetarian, Continental), infant/toddler age, elderly mobility routines, or specific weekly off preferences..."></textarea>
+                </div>
+
+                <div class="col-12 pt-2">
+                  <button type="submit" class="btn-brand w-100 py-3">
+                    <i class="bi bi-send-check me-2"></i>Submit Helper Request to Placement Desk
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div id="dashboardRequestFeedback" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <!-- PANE 3: VIEWING VERIFIED PROFILES (3 DOSSIERS) -->
+        <div class="dashboard-pane d-none" data-dashboard-pane="tab-profiles">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+              <h2 class="h4 mb-1">Your Curated Shortlist of Screened Candidates</h2>
+              <p class="small text-muted mb-0">Every candidate has completed all 8 verification steps with written counselor notes.</p>
+            </div>
+            <span class="badge rounded-pill px-3 py-2" style="background-color: var(--accent-warm-soft); color: var(--accent-warm);">
+              Fictional Illustrative Dossiers
+            </span>
+          </div>
+
+          <div class="row g-4">
+            <!-- Candidate 1 -->
+            <div class="col-md-4">
+              <div class="staff-card">
+                <div class="staff-card-media">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80" alt="Anita Desai">
+                  <span class="sample-profile-pill">Shortlisted • Ready for Trial</span>
+                </div>
+                <div class="staff-card-body">
+                  <h3 class="h5 mb-1">Anita Desai <span class="small fw-normal text-muted">(33 yrs)</span></h3>
+                  <p class="small fw-semibold mb-2" style="color: var(--accent-teal);">Certified Infant &amp; Toddler Nanny</p>
+                  <div class="verified-checks-row mb-3">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> ID Checked</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> 2 Childcare Refs</span>
+                  </div>
+                  <p class="small mb-3">7 Years verified infant experience. Trained in sterilization routines, bottle feeding, and safe developmental play.</p>
+                  <div class="d-flex gap-2 mt-auto pt-2 border-top">
+                    <button type="button" class="btn-outline-brand btn-sm flex-grow-1" data-dossier-id="anita-desai">View Dossier</button>
+                    <a href="contact.html?category=Babysitters+and+Nannies&schedule=Full-Time+(Day+Shift)&ref=Anita+Desai#enquiry-form" class="btn-brand btn-sm flex-grow-1">Book Trial</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Candidate 2 -->
+            <div class="col-md-4">
+              <div class="staff-card">
+                <div class="staff-card-media">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80" alt="Samuel Thomas">
+                  <span class="sample-profile-pill">Shortlisted • Ready for Trial</span>
+                </div>
+                <div class="staff-card-body">
+                  <h3 class="h5 mb-1">Samuel Thomas <span class="small fw-normal text-muted">(39 yrs)</span></h3>
+                  <p class="small fw-semibold mb-2" style="color: var(--accent-teal);">Elderly Care &amp; Mobility Companion</p>
+                  <div class="verified-checks-row mb-3">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> ID Checked</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Elder Refs Audited</span>
+                  </div>
+                  <p class="small mb-3">9 Years senior care experience. Skilled in mobility assistance, timely vitals logging, and empathetic companionship.</p>
+                  <div class="d-flex gap-2 mt-auto pt-2 border-top">
+                    <button type="button" class="btn-outline-brand btn-sm flex-grow-1" data-dossier-id="samuel-thomas">View Dossier</button>
+                    <a href="contact.html?category=Elderly+Care+Assistance&schedule=Live-In+(24-Hour+Support)&ref=Samuel+Thomas#enquiry-form" class="btn-brand btn-sm flex-grow-1">Book Trial</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Candidate 3 -->
+            <div class="col-md-4">
+              <div class="staff-card">
+                <div class="staff-card-media">
+                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80" alt="Elena Fernandes">
+                  <span class="sample-profile-pill">Shortlisted • Ready for Trial</span>
+                </div>
+                <div class="staff-card-body">
+                  <h3 class="h5 mb-1">Elena Fernandes <span class="small fw-normal text-muted">(38 yrs)</span></h3>
+                  <p class="small fw-semibold mb-2" style="color: var(--accent-teal);">Executive Housekeeping Specialist</p>
+                  <div class="verified-checks-row mb-3">
+                    <span class="verified-chip"><i class="bi bi-check2"></i> ID Checked</span>
+                    <span class="verified-chip"><i class="bi bi-check2"></i> Luxury Estate Refs</span>
+                  </div>
+                  <p class="small mb-3">10 Years luxury residence background. Expertise in fine surface maintenance, delicate wardrobe steaming, and guest service.</p>
+                  <div class="d-flex gap-2 mt-auto pt-2 border-top">
+                    <button type="button" class="btn-outline-brand btn-sm flex-grow-1" data-dossier-id="elena-fernandes">View Dossier</button>
+                    <a href="contact.html?category=Professional+Housekeeping&schedule=Full-Time+(Day+Shift)&ref=Elena+Fernandes#enquiry-form" class="btn-brand btn-sm flex-grow-1">Book Trial</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANE 4: TRACKING PLACEMENTS -->
+        <div class="dashboard-pane d-none" data-dashboard-pane="tab-tracking">
+          <div class="p-4 p-md-5 rounded-4 shadow-sm mb-4" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+              <div>
+                <span class="badge rounded-pill mb-1" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Active Milestone Tracker</span>
+                <h2 class="h4 mb-0">Placement Journey: Home Cook Requirement (Ref #REQ-3820)</h2>
+              </div>
+              <span class="small text-muted">Counselor: Nandini Kulkarni</span>
+            </div>
+
+            <!-- Visual Progress Bar -->
+            <div class="placement-progress-bar">
+              <div class="progress-step-node completed">
+                <span class="progress-step-icon"><i class="bi bi-check"></i></span>
+                <span class="progress-step-label">1. Brief Logged</span>
+              </div>
+              <div class="progress-step-node completed">
+                <span class="progress-step-icon"><i class="bi bi-check"></i></span>
+                <span class="progress-step-label">2. Dossiers Audited</span>
+              </div>
+              <div class="progress-step-node active">
+                <span class="progress-step-icon"><i class="bi bi-stopwatch"></i></span>
+                <span class="progress-step-label">3. In Home Trial</span>
+              </div>
+              <div class="progress-step-node">
+                <span class="progress-step-icon"><i class="bi bi-file-earmark-check"></i></span>
+                <span class="progress-step-label">4. Agreement Execution</span>
+              </div>
+              <div class="progress-step-node">
+                <span class="progress-step-icon"><i class="bi bi-shield-check"></i></span>
+                <span class="progress-step-label">5. 6-Month Coverage</span>
+              </div>
+            </div>
+
+            <div class="alert alert-info border-0 rounded-3 p-3 mb-0 small">
+              <i class="bi bi-info-circle-fill me-2"></i>
+              <strong>Current Stage:</strong> Rajesh Sharma is completing Day 2 of a 3-day supervised home trial. Your placement counselor will call at 6:00 PM tomorrow to record your feedback and prepare the formal placement agreement upon approval.
+            </div>
+          </div>
+
+          <!-- Placement History Ledger Table -->
+          <div class="table-responsive comparison-table shadow-sm">
+            <table class="table dashboard-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">Candidate Name</th>
+                  <th scope="col">Category &amp; Shift</th>
+                  <th scope="col">Placement Date</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Replacement Guarantee</th>
+                  <th scope="col" class="text-end">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fw-bold">Meera Nair</td>
+                  <td>Full-Time Maid Services (9 AM – 6 PM)</td>
+                  <td>14 Oct 2025</td>
+                  <td><span class="badge rounded-pill" style="background-color: var(--verified-bg); color: var(--verified-green);">Active Placed</span></td>
+                  <td><span class="text-success small fw-semibold"><i class="bi bi-shield-check me-1"></i>Covered until 14 Apr 2026</span></td>
+                  <td class="text-end">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-dossier-id="meera-nair">Dossier</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Rajesh Sharma</td>
+                  <td>Family Home Cook (Morning / Evening)</td>
+                  <td>Trial Started 04 Nov 2026</td>
+                  <td><span class="badge rounded-pill" style="background-color: var(--warning-bg); color: var(--warning-amber);">In 3-Day Trial</span></td>
+                  <td>Pending Placement Agreement</td>
+                  <td class="text-end">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-dossier-id="rajesh-sharma">Dossier</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- PANE 5: MANAGING PAYMENTS & BILLING -->
+        <div class="dashboard-pane d-none" data-dashboard-pane="tab-payments">
+          <div class="row g-4 mb-4">
+            <div class="col-lg-6">
+              <div class="p-4 rounded-4 shadow-sm h-100" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <span class="eyebrow-badge mb-1">Direct Staff Remuneration</span>
+                    <h2 class="h5 mb-0">Monthly Direct Helper Wages</h2>
+                  </div>
+                  <span class="badge rounded-pill" style="background-color: var(--verified-bg); color: var(--verified-green);">Zero Commission Guarantee</span>
+                </div>
+                <p class="small mb-3">
+                  To ensure complete financial dignity and prevent intermediary exploitation, 100% of the agreed helper salary is paid directly from your family to the placed worker's documented bank account on the 1st of each month.
+                </p>
+                <div class="p-3 rounded-3 mb-3 small" style="background-color: var(--bg-secondary);">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span>Active Helper (Meera Nair):</span>
+                    <strong>₹18,000 / month</strong>
+                  </div>
+                  <div class="d-flex justify-content-between mb-1">
+                    <span>Payment Method:</span>
+                    <span>Direct NEFT / UPI to Staff Bank</span>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span>Next Due Date:</span>
+                    <strong class="text-primary">01 Dec 2026</strong>
+                  </div>
+                </div>
+                <div class="small text-muted"><i class="bi bi-shield-lock me-1"></i>Hearth &amp; Haven never takes any ongoing salary commission.</div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="p-4 rounded-4 shadow-sm h-100" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <div>
+                    <span class="eyebrow-badge mb-1">Agency Invoices</span>
+                    <h2 class="h5 mb-0">One-Time Placement &amp; Audit Fees</h2>
+                  </div>
+                  <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Includes 6-Mo Replacement</span>
+                </div>
+                <p class="small mb-3">
+                  Covers our rigorous 8-stage verification, background checks, counselor interviews, and 6-month replacement guarantee (up to 3 replacements without additional agency fees).
+                </p>
+                <div class="p-3 rounded-3 mb-3 small" style="background-color: var(--bg-secondary);">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span>Latest Invoice #INV-2025-104:</span>
+                    <strong class="text-success">Paid (₹15,000 + GST)</strong>
+                  </div>
+                  <div class="d-flex justify-content-between mb-1">
+                    <span>Invoice Date:</span>
+                    <span>14 Oct 2025</span>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span>Coverage Period:</span>
+                    <span>14 Oct 2025 – 14 Apr 2026</span>
+                  </div>
+                </div>
+                <button type="button" class="btn-outline-brand btn-sm" onclick="alert('Receipt downloaded (Frontend Demo).');">
+                  <i class="bi bi-download me-1"></i>Download Tax Invoice &amp; Agreement PDF
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transaction Ledger Table -->
+          <div class="table-responsive comparison-table shadow-sm">
+            <table class="table dashboard-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col" class="text-end">Receipt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01 Nov 2026</td>
+                  <td>Monthly Wage Payout — Meera Nair (Housemaid)</td>
+                  <td>Direct Helper Remuneration</td>
+                  <td class="fw-bold">₹18,000</td>
+                  <td><span class="badge rounded-pill" style="background-color: var(--verified-bg); color: var(--verified-green);">Directly Logged</span></td>
+                  <td class="text-end"><button class="btn btn-sm btn-outline-secondary" onclick="alert('Payment receipt logged.');"><i class="bi bi-file-text"></i></button></td>
+                </tr>
+                <tr>
+                  <td>14 Oct 2025</td>
+                  <td>Agency Placement &amp; 8-Stage Audit Fee (Inv #104)</td>
+                  <td>One-Time Agency Placement</td>
+                  <td class="fw-bold">₹17,700 (incl. GST)</td>
+                  <td><span class="badge rounded-pill" style="background-color: var(--verified-bg); color: var(--verified-green);">Paid</span></td>
+                  <td class="text-end"><button class="btn btn-sm btn-outline-secondary" onclick="alert('Invoice downloaded.');"><i class="bi bi-download"></i></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Sample Candidate Dossier Modal -->
+  <div class="modal fade" id="sampleDossierModal" tabindex="-1" aria-labelledby="dossierModalName" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge rounded-pill mb-1" style="background-color: var(--accent-warm-soft); color: var(--accent-warm);">Verified Candidate Dossier</span>
+            <h4 class="modal-title h5 mb-0" id="dossierModalName">Sample Candidate</h4>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="fw-semibold mb-3" style="color: var(--accent-teal);" id="dossierModalRole">Role Title</p>
+          <div class="row g-3 mb-4">
+            <div class="col-sm-4">
+              <div class="p-3 rounded-3" style="background-color: var(--bg-secondary);">
+                <div class="small text-muted">Experience</div>
+                <div class="fw-semibold small" id="dossierModalExp">-</div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="p-3 rounded-3" style="background-color: var(--bg-secondary);">
+                <div class="small text-muted">Preferred Schedule</div>
+                <div class="fw-semibold small" id="dossierModalSchedule">-</div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="p-3 rounded-3" style="background-color: var(--bg-secondary);">
+                <div class="small text-muted">Languages Spoken</div>
+                <div class="fw-semibold small" id="dossierModalLang">-</div>
+              </div>
+            </div>
+          </div>
+          <h5 class="h6">Counselor Assessment Summary</h5>
+          <p class="small mb-4" id="dossierModalSummary">-</p>
+          <h5 class="h6">Verification Audit Checklist</h5>
+          <ul class="list-unstyled small mb-3" id="dossierModalChecks"></ul>
+          <div class="p-3 rounded-3 small" style="background-color: var(--bg-secondary); color: var(--text-muted);">
+            <i class="bi bi-info-circle me-1"></i>
+            <strong>Privacy &amp; Compliance Notice:</strong> Identity documents are verified under strict candidate consent guidelines.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-outline-brand btn-sm" data-bs-dismiss="modal">Close Preview</button>
+          <a href="contact.html#enquiry-form" id="dossierModalCta" class="btn-brand btn-sm">
+            <span>Schedule Supervised Trial</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

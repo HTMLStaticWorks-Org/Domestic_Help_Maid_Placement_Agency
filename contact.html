@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Find a Helper Enquiry | Hearth &amp; Haven Domestic Staffing</title>
+  <meta name="description" content="Submit your household staffing enquiry to Hearth & Haven. Request verified full-time maids, part-time helpers, live-in domestic staff, home cooks, nannies, or elderly caregivers.">
+
+  <!-- Pre-paint Theme & RTL Initialization -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('hearth_haven_theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+        var savedDir = localStorage.getItem('hearth_haven_direction');
+        if (savedDir === 'rtl' || savedDir === 'ltr') {
+          document.documentElement.setAttribute('dir', savedDir);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Favicon (Brand Icon) -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       MANDATORY STICKY NAVBAR
+       ======================================================================== -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-xl site-navbar" aria-label="Main Navigation">
+      <div class="container">
+        <a class="navbar-brand-wrap" href="index.html">
+          <span class="brand-mark">H</span>
+          <span class="brand-text">
+            <span class="brand-name">Hearth &amp; Haven</span>
+            <span class="brand-tagline">Domestic Placement Agency</span>
+          </span>
+        </a>
+
+        <div class="d-flex align-items-center gap-2 d-xl-none">
+          <button type="button" class="rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Toggle color theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button class="navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-4"></i>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="mainNavbarCollapse">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Home
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                <li>
+                  <a class="dropdown-item" href="index.html">
+                    <span>Home 1 — Classic Agency</span>
+                    <span class="dropdown-badge">Default</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="home-2.html">
+                    <span>Home 2 — Editorial &amp; Finder</span>
+                    <span class="dropdown-badge">Demo 2</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="verification.html">Verification Process</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+            <!-- Dashboard Menu beside Contact -->
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+          </ul>
+
+          <div class="navbar-actions">
+            <a href="signup.html" class="nav-signup-btn">Sign Up</a>
+            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+            <button type="button" class="theme-toggle-btn d-none d-xl-inline-flex" data-theme-toggle aria-label="Toggle color theme">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         1. CONTACT INTRODUCTION HERO
+         ====================================================================== -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="row align-items-center g-4 js-gsap-reveal">
+          <div class="col-lg-7">
+            <span class="eyebrow-badge">
+              <i class="bi bi-chat-heart"></i>
+              <span>Household Staffing &amp; Placement Desk</span>
+            </span>
+            <h1 class="display-hero mb-3">Request a Verified Domestic Helper Shortlist</h1>
+            <p class="section-subtitle mb-0">
+              Complete our placement brief below or reach out directly to our regional offices. A senior placement counselor will review your household requirements and share 2 to 4 verified candidate dossiers.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <div class="p-4 rounded-4 shadow-sm" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="category-icon-box mb-0" style="width: 46px; height: 46px; font-size: 1.2rem;">
+                  <i class="bi bi-headset"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="color: var(--text-primary);">Direct Counselor Helpline</div>
+                  <div class="small text-muted">Mon – Sat, 9:00 AM to 7:00 PM IST</div>
+                </div>
+              </div>
+              <div class="fs-5 fw-bold mb-1" style="font-family: var(--font-heading); color: var(--accent-teal);">+91 (022) 4890-7200</div>
+              <div class="small text-muted">Email: <a href="mailto:placements@hearthandhaven.in" class="fw-semibold">placements@hearthandhaven.in</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. ENQUIRY FORM & CONTACT DETAILS / BUSINESS HOURS
+         ====================================================================== -->
+    <section class="section-py" id="enquiry-form">
+      <div class="container">
+        <div class="row g-5">
+          <!-- Left: Placement Enquiry Form -->
+          <div class="col-lg-7">
+            <div class="form-card">
+              <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+                <h2 class="h3 mb-0">Household Placement Enquiry Form</h2>
+                <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Frontend Demo Form</span>
+              </div>
+              <p class="small mb-4">
+                Please provide your household details and role preferences. Fields marked with <span class="text-danger">*</span> are required.
+              </p>
+
+              <form id="placementEnquiryForm" class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <!-- Name -->
+                  <div class="col-md-6">
+                    <label for="contactName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                    <input type="text" id="contactName" name="name" class="form-control" placeholder="e.g., Meenakshi Iyer" required>
+                    <div class="invalid-feedback">Please enter your full name.</div>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="col-md-6">
+                    <label for="contactEmail" class="form-label">Email Address <span class="text-danger">*</span></label>
+                    <input type="email" id="contactEmail" name="email" class="form-control" placeholder="name@example.com" required>
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+
+                  <!-- Phone Number -->
+                  <div class="col-md-6">
+                    <label for="contactPhone" class="form-label">Phone / Mobile Number <span class="text-danger">*</span></label>
+                    <input type="tel" id="contactPhone" name="phone" class="form-control" placeholder="+91 98200 00000" pattern="[0-9+\-\s()]{8,16}" required>
+                    <div class="invalid-feedback">Please enter a valid contact phone number.</div>
+                  </div>
+
+                  <!-- Location -->
+                  <div class="col-md-6">
+                    <label for="contactLocation" class="form-label">City &amp; Neighborhood <span class="text-danger">*</span></label>
+                    <input type="text" id="contactLocation" name="location" class="form-control" placeholder="e.g., Worli, Mumbai or Indiranagar, Bengaluru" required>
+                    <div class="invalid-feedback">Please specify your city and neighborhood.</div>
+                  </div>
+
+                  <!-- Preferred Domestic Help Category -->
+                  <div class="col-md-6">
+                    <label for="contactCategory" class="form-label">Preferred Domestic Help Category <span class="text-danger">*</span></label>
+                    <select id="contactCategory" name="category" class="form-select" required>
+                      <option value="" selected disabled>Select a staffing category...</option>
+                      <option value="Full-Time Maid Services">Full-Time Maid Services</option>
+                      <option value="Part-Time Maid Services">Part-Time Maid Services</option>
+                      <option value="Live-In Domestic Help">Live-In Domestic Help</option>
+                      <option value="Professional Housekeeping">Professional Housekeeping</option>
+                      <option value="Home Cooks">Home Cooks</option>
+                      <option value="Babysitters and Nannies">Babysitters and Nannies</option>
+                      <option value="Elderly Care Assistance">Elderly Care Assistance</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a domestic help category.</div>
+                  </div>
+
+                  <!-- Full-Time / Part-Time / Live-In Preference -->
+                  <div class="col-md-6">
+                    <label for="contactSchedule" class="form-label">Full-Time / Part-Time / Live-In Preference <span class="text-danger">*</span></label>
+                    <select id="contactSchedule" name="schedule" class="form-select" required>
+                      <option value="" selected disabled>Select schedule preference...</option>
+                      <option value="Full-Time (Day Shift)">Full-Time (8–10 Hours Day Shift)</option>
+                      <option value="Part-Time (Morning / Evening)">Part-Time (Morning / Evening Slot)</option>
+                      <option value="Live-In (24-Hour Support)">Live-In (24-Hour Residential Support)</option>
+                      <option value="12-Hour Night Shift (Care)">12-Hour Night Shift (Child / Senior Care)</option>
+                    </select>
+                    <div class="invalid-feedback">Please choose your preferred work arrangement.</div>
+                  </div>
+
+                  <!-- Additional Requirements -->
+                  <div class="col-12">
+                    <label for="contactRequirements" class="form-label">Additional Household Requirements <span class="text-danger">*</span></label>
+                    <textarea id="contactRequirements" name="requirements" rows="4" class="form-control" placeholder="Share residence size (e.g., 3 BHK), family members, language preference, cuisine type, infant/senior age, or preferred start date..." required></textarea>
+                    <div class="invalid-feedback">Please share brief details about your household requirements.</div>
+                  </div>
+
+                  <!-- Consent Checkbox -->
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="contactConsent" required>
+                      <label class="form-check-label small" for="contactConsent">
+                        I understand that this is a frontend template demonstration form and agree to Hearth &amp; Haven's ethical placement standards and verification policy.
+                      </label>
+                      <div class="invalid-feedback">Please check this box to proceed.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 pt-2">
+                    <button type="submit" class="btn-brand w-100 py-3">
+                      <i class="bi bi-send-check"></i>
+                      <span>Submit Placement Enquiry</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- Validation & Submission Feedback Container -->
+              <div id="contactFormFeedback" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <!-- Right: Contact Details, Business Hours & Social Media Links -->
+          <div class="col-lg-5">
+            <div class="d-flex flex-column gap-4">
+              <!-- Office Contact Details Card -->
+              <div class="p-4 rounded-4" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); box-shadow: var(--shadow-xs);">
+                <h3 class="h5 mb-3"><i class="bi bi-building me-2" style="color: var(--accent-teal);"></i>Regional Placement Offices</h3>
+
+                <div class="mb-3 pb-3 border-bottom" style="border-color: var(--border-subtle) !important;">
+                  <div class="fw-bold small" style="color: var(--text-primary);">Mumbai Headquarters (Flagship Desk)</div>
+                  <p class="small mb-1">Suite 402, Heritage Chambers, Dr. Annie Besant Road, Worli, Mumbai, Maharashtra 400018</p>
+                  <div class="small"><i class="bi bi-telephone me-1" style="color: var(--accent-teal);"></i>+91 (022) 4890-7200 • <i class="bi bi-whatsapp ms-1 me-1 text-success"></i>+91 98200 11223</div>
+                </div>
+
+                <div class="mb-3 pb-3 border-bottom" style="border-color: var(--border-subtle) !important;">
+                  <div class="fw-bold small" style="color: var(--text-primary);">Bengaluru Placement Center</div>
+                  <p class="small mb-1">2nd Floor, Elm Crest, 100 Feet Road, Indiranagar, Bengaluru, Karnataka 560038</p>
+                  <div class="small"><i class="bi bi-telephone me-1" style="color: var(--accent-teal);"></i>+91 (080) 4120-8900</div>
+                </div>
+
+                <div>
+                  <div class="fw-bold small" style="color: var(--text-primary);">Delhi NCR / Gurugram Desk</div>
+                  <p class="small mb-1">Level 3, Parkview Square, Sector 43, Golf Course Road, Gurugram 122002</p>
+                  <div class="small"><i class="bi bi-telephone me-1" style="color: var(--accent-teal);"></i>+91 (0124) 450-9100</div>
+                </div>
+              </div>
+
+              <!-- Business Hours Card -->
+              <div class="p-4 rounded-4" style="background-color: var(--bg-surface); border: 1px solid var(--border-color); box-shadow: var(--shadow-xs);">
+                <h3 class="h5 mb-3"><i class="bi bi-clock-history me-2" style="color: var(--accent-teal);"></i>Business &amp; Interview Hours</h3>
+                <ul class="list-unstyled small mb-0">
+                  <li class="d-flex justify-content-between py-2 border-bottom" style="border-color: var(--border-subtle) !important;">
+                    <span class="fw-semibold">Monday – Friday</span>
+                    <span>9:00 AM – 7:00 PM IST</span>
+                  </li>
+                  <li class="d-flex justify-content-between py-2 border-bottom" style="border-color: var(--border-subtle) !important;">
+                    <span class="fw-semibold">Saturday (Family Trial &amp; Interviews)</span>
+                    <span>9:30 AM – 6:00 PM IST</span>
+                  </li>
+                  <li class="d-flex justify-content-between pt-2">
+                    <span class="fw-semibold">Sunday</span>
+                    <span class="badge rounded-pill" style="background-color: var(--bg-secondary); color: var(--text-secondary);">By Prior Appointment Only</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Social Media & Direct Channels Card -->
+              <div class="p-4 rounded-4" style="background-color: var(--bg-navy); color: #FAF8F5;">
+                <h3 class="h6 text-white mb-2">Connect With Hearth &amp; Haven</h3>
+                <p class="small mb-3" style="color: #C2CEDC;">
+                  Follow our household care guides, verification tips, and client advisories across our official social channels.
+                </p>
+                <div class="d-flex gap-2">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://wa.me/919820011223" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. MAP / LOCATION SECTION
+         ====================================================================== -->
+    <section class="section-py-sm bg-ivory-alt">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-4">
+            <span class="eyebrow-badge">Visit Our Flagship Center</span>
+            <h2 class="h3 mb-2">Location &amp; In-Person Interview Lounge</h2>
+            <p class="small mb-3">
+              Prefer to interview shortlisted candidates at our private counseling suites rather than at home? Our Worli flagship office features dedicated family interview rooms and a test kitchen.
+            </p>
+            <div class="p-3 rounded-3 small mb-3" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+              <div><strong>Landmark:</strong> Opposite Century Bazaar, Dr. Annie Besant Road, Worli, Mumbai 400018</div>
+              <div class="mt-1"><strong>Parking:</strong> Visitor valet parking available at Gate 2.</div>
+            </div>
+            <a href="https://maps.google.com/?q=Worli+Mumbai" target="_blank" rel="noopener noreferrer" class="btn-outline-brand btn-sm">
+              <i class="bi bi-map"></i>
+              <span>Open in Google Maps</span>
+            </a>
+          </div>
+          <div class="col-lg-8">
+            <div class="rounded-4 overflow-hidden shadow-sm" style="border: 1px solid var(--border-color); height: 360px; background-color: var(--bg-surface);">
+              <iframe
+                title="Hearth and Haven Flagship Office Map Location in Worli Mumbai"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=72.8110%2C18.9950%2C72.8290%2C19.0150&amp;layer=mapnik&amp;marker=19.0050%2C72.8200"
+                style="width: 100%; height: 100%; border: 0;"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       PROFESSIONAL MULTI-COLUMN FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5 pb-5 border-bottom footer-divider">
+        <div class="col-lg-4">
+          <a class="navbar-brand-wrap mb-3" href="index.html">
+            <span class="brand-mark">H</span>
+            <span class="brand-text">
+              <span class="brand-name footer-brand-title">Hearth &amp; Haven</span>
+              <span class="brand-tagline footer-brand-subtitle">Domestic Placement Agency</span>
+            </span>
+          </a>
+          <p class="small mb-4 footer-text-secondary">
+            Connecting discerning households with carefully screened housemaids, home cooks, nannies, babysitters, and elderly caregivers through transparent, ethical placement standards.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/919820011223" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <h5>Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 (Classic)</a></li>
+            <li><a href="home-2.html">Home 2 (Editorial)</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="verification.html">Verification Process</a></li>
+            <li><a href="about.html">About Agency</a></li>
+            <li><a href="contact.html">Contact &amp; Enquiry</a></li>
+            <li><a href="dashboard.html">Client Dashboard</a></li>
+            <li><a href="signup.html">Client Sign Up</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <h5>Staffing Categories</h5>
+          <ul class="footer-links">
+            <li><a href="services.html#full-time-maid">Full-Time Maid Services</a></li>
+            <li><a href="services.html#part-time-maid">Part-Time Maid Services</a></li>
+            <li><a href="services.html#live-in-help">Live-In Domestic Help</a></li>
+            <li><a href="services.html#housekeeping">Professional Housekeeping</a></li>
+            <li><a href="services.html#home-cooks">Verified Home Cooks</a></li>
+            <li><a href="services.html#babysitters-nannies">Babysitters &amp; Nannies</a></li>
+            <li><a href="services.html#elderly-care">Elderly Care Assistance</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 col-lg-3">
+          <h5>Placement Desk</h5>
+          <ul class="list-unstyled small mb-4 footer-text-secondary">
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-geo-alt text-info"></i>
+              <span>Suite 402, Heritage Chambers, Worli, Mumbai 400018</span>
+            </li>
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-telephone text-info"></i>
+              <span>+91 (022) 4890-7200 / +91 98200 11223</span>
+            </li>
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-envelope text-info"></i>
+              <span>placements@hearthandhaven.in</span>
+            </li>
+            <li class="d-flex gap-2">
+              <i class="bi bi-clock text-info"></i>
+              <span>Mon – Sat: 9:00 AM – 7:00 PM</span>
+            </li>
+          </ul>
+
+          <form class="js-newsletter-form" novalidate>
+            <label for="footerEmail6" class="form-label footer-brand-title small mb-1">Download Hiring &amp; Salary Guide</label>
+            <div class="input-group input-group-sm">
+              <input type="email" id="footerEmail6" class="form-control footer-input" placeholder="Your email address" required>
+              <button class="btn btn-info text-white fw-semibold" type="submit">Send</button>
+            </div>
+            <div class="js-newsletter-msg mt-1"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-muted">
+        <div>
+          &copy; 2026 Hearth &amp; Haven Domestic Staffing Pvt. Ltd. All rights reserved.
+        </div>
+        <div class="text-md-end">
+          Verification scope depends on applicable laws, candidate consent, and official record availability. Sample profiles are fictional illustrations.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

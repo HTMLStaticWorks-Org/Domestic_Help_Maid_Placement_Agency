@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hearth &amp; Haven | Reliable Domestic Help &amp; Verified Maid Placement Agency</title>
+  <meta name="description" content="Hearth & Haven is a premier domestic staffing agency placing thoroughly screened housemaids, home cooks, nannies, babysitters, and elderly caregivers for discerning households.">
+
+  <!-- Pre-paint Theme & RTL Initialization -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('hearth_haven_theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+        var savedDir = localStorage.getItem('hearth_haven_direction');
+        if (savedDir === 'rtl' || savedDir === 'ltr') {
+          document.documentElement.setAttribute('dir', savedDir);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Favicon (Brand Icon) -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts (Plus Jakarta Sans & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       MANDATORY STICKY NAVBAR
+       ======================================================================== -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-xl site-navbar" aria-label="Main Navigation">
+      <div class="container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand-wrap" href="index.html">
+          <span class="brand-mark">H</span>
+          <span class="brand-text">
+            <span class="brand-name">Hearth &amp; Haven</span>
+            <span class="brand-tagline">Domestic Placement Agency</span>
+          </span>
+        </a>
+
+        <!-- Mobile Toggle, RTL & Theme Button on Small Screens -->
+        <div class="d-flex align-items-center gap-2 d-xl-none">
+          <button type="button" class="rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Toggle color theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button class="navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list fs-4"></i>
+          </button>
+        </div>
+
+        <!-- Collapsible Navigation -->
+        <div class="collapse navbar-collapse" id="mainNavbarCollapse">
+          <ul class="navbar-nav mx-auto">
+            <!-- 1. Home Dropdown (Home 1 & Home 2) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Home
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="homeDropdown">
+                <li>
+                  <a class="dropdown-item active" href="index.html">
+                    <span>Home 1 — Classic Agency</span>
+                    <span class="dropdown-badge">Default</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="home-2.html">
+                    <span>Home 2 — Editorial &amp; Finder</span>
+                    <span class="dropdown-badge">Demo 2</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- 2. Services -->
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <!-- 3. Verification Process -->
+            <li class="nav-item">
+              <a class="nav-link" href="verification.html">Verification Process</a>
+            </li>
+            <!-- 4. About -->
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <!-- 5. Contact -->
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <!-- 6. Dashboard (New) -->
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">Dashboard</a>
+            </li>
+          </ul>
+
+          <!-- Right Actions: Sign Up, RTL Button, Theme Toggle -->
+          <div class="navbar-actions">
+            <a href="signup.html" class="nav-signup-btn">Sign Up</a>
+            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+            <button type="button" class="theme-toggle-btn d-none d-xl-inline-flex" data-theme-toggle aria-label="Toggle color theme">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         1. HERO SECTION — HOME 1
+         ====================================================================== -->
+    <section class="hero-home-1">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <!-- Left Content -->
+          <div class="col-lg-6 js-gsap-reveal">
+            <div class="eyebrow-badge">
+              <i class="bi bi-shield-check"></i>
+              <span>Structured Domestic Staffing &amp; Placement</span>
+            </div>
+            <h1 class="display-hero mb-4">Reliable Domestic Help, Carefully Verified.</h1>
+            <p class="section-subtitle mb-4">
+              We partner with families and working professionals to place thoroughly screened housemaids, home cooks, nannies, babysitters, and elderly caregivers. Every placement is backed by documented identity verification, reference checks, and dedicated counselor support.
+            </p>
+
+            <!-- Primary & Secondary CTAs -->
+            <div class="d-flex flex-wrap gap-3 mb-5">
+              <a href="contact.html#enquiry-form" class="btn-brand">
+                <span>Find a Helper</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="verification.html" class="btn-outline-brand">
+                <i class="bi bi-file-earmark-check"></i>
+                <span>Explore Our Verification Process</span>
+              </a>
+            </div>
+
+            <!-- Trust Metrics Strip -->
+            <div class="row g-3 pt-3 border-top" style="border-color: var(--border-color) !important;">
+              <div class="col-4">
+                <div class="fw-bold fs-4" style="font-family: var(--font-heading); color: var(--text-primary);">8-Stage</div>
+                <div class="small" style="color: var(--text-muted);">Screening Protocol</div>
+              </div>
+              <div class="col-4">
+                <div class="fw-bold fs-4" style="font-family: var(--font-heading); color: var(--text-primary);">3–5 Days</div>
+                <div class="small" style="color: var(--text-muted);">Curated Shortlist</div>
+              </div>
+              <div class="col-4">
+                <div class="fw-bold fs-4" style="font-family: var(--font-heading); color: var(--text-primary);">6-Month</div>
+                <div class="small" style="color: var(--text-muted);">Replacement Support</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Photography & Floating Verification Cards -->
+          <div class="col-lg-6 js-gsap-reveal">
+            <div class="position-relative px-md-3">
+              <!-- Floating Badge Top Left -->
+              <div class="hero-floating-card card-top-left">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 42px; height: 42px; background-color: var(--verified-bg); color: var(--verified-green);">
+                    <i class="bi bi-patch-check-fill fs-5"></i>
+                  </div>
+                  <div>
+                    <div class="fw-bold small" style="color: var(--text-primary);">Multi-Point Screening</div>
+                    <div class="small" style="font-size: 0.76rem; color: var(--text-muted);">ID, Address &amp; Prior Employer Checks</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Authentic Photograph -->
+              <div class="hero-image-frame">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80" alt="Professional domestic helper preparing healthy meal in a bright welcoming family kitchen">
+              </div>
+
+              <!-- Floating Badge Bottom Right -->
+              <div class="hero-floating-card card-bottom-right">
+                <div class="d-flex align-items-center gap-2 mb-1">
+                  <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Personal Matching</span>
+                </div>
+                <div class="fw-bold small" style="color: var(--text-primary);">Supervised Trial Period</div>
+                <div class="small" style="font-size: 0.76rem; color: var(--text-muted);">Interview &amp; evaluate compatibility before formalizing placement.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Helper Requirement Finder Bar -->
+        <div class="quick-finder-bar">
+          <form class="js-quick-finder-form" aria-label="Quick Helper Requirement Finder">
+            <div class="row g-3 align-items-end">
+              <div class="col-md-4 col-lg-3">
+                <label for="quickCategory" class="form-label"><i class="bi bi-briefcase me-1"></i>Domestic Help Category</label>
+                <select id="quickCategory" name="category" class="form-select">
+                  <option value="Full-Time Maid Services">Full-Time Maid Services</option>
+                  <option value="Part-Time Maid Services">Part-Time Maid Services</option>
+                  <option value="Live-In Domestic Help">Live-In Domestic Help</option>
+                  <option value="Professional Housekeeping">Professional Housekeeping</option>
+                  <option value="Home Cooks">Home Cooks</option>
+                  <option value="Babysitters and Nannies">Babysitters &amp; Nannies</option>
+                  <option value="Elderly Care Assistance">Elderly Care Assistance</option>
+                </select>
+              </div>
+              <div class="col-md-4 col-lg-3">
+                <label for="quickSchedule" class="form-label"><i class="bi bi-clock me-1"></i>Work Arrangement</label>
+                <select id="quickSchedule" name="schedule" class="form-select">
+                  <option value="Full-Time (Day Shift)">Full-Time (8–10 Hrs Day)</option>
+                  <option value="Part-Time (Morning / Evening)">Part-Time (Morning / Evening)</option>
+                  <option value="Live-In (24-Hour Support)">Live-In (24-Hour Support)</option>
+                </select>
+              </div>
+              <div class="col-md-4 col-lg-3">
+                <label for="quickLocation" class="form-label"><i class="bi bi-geo-alt me-1"></i>City / Neighborhood</label>
+                <input type="text" id="quickLocation" name="location" class="form-control" placeholder="e.g., South Mumbai, Indiranagar">
+              </div>
+              <div class="col-lg-3">
+                <button type="submit" class="btn-brand w-100">
+                  <i class="bi bi-search"></i>
+                  <span>Request Shortlist</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. FEATURED VERIFIED STAFF PROFILES (CLEARLY IDENTIFIED SAMPLE PROFILES)
+         ====================================================================== -->
+    <section class="section-py" id="sample-profiles">
+      <div class="container">
+        <div class="row align-items-end justify-content-between mb-4 g-3">
+          <div class="col-lg-7">
+            <span class="eyebrow-badge">Candidate Presentation Standard</span>
+            <h2 class="section-title mb-2">Featured Sample Staff Profiles</h2>
+            <p class="section-subtitle mb-0">
+              Explore how we document candidate experience, verified credentials, language fluency, and household skills before arranging family interviews.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <!-- Category Filter Pills -->
+            <div class="d-flex flex-wrap gap-2 justify-content-lg-end" role="group" aria-label="Filter sample profiles">
+              <button type="button" class="profile-filter-btn active" data-profile-filter="all">All Roles</button>
+              <button type="button" class="profile-filter-btn" data-profile-filter="maid">Maids &amp; Housekeeping</button>
+              <button type="button" class="profile-filter-btn" data-profile-filter="cook">Home Cooks</button>
+              <button type="button" class="profile-filter-btn" data-profile-filter="nanny">Nannies</button>
+              <button type="button" class="profile-filter-btn" data-profile-filter="elderly">Elderly Care</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mandatory Transparency Notice for Sample Profiles -->
+        <div class="sample-disclaimer-banner mb-5">
+          <i class="bi bi-info-circle-fill fs-5" style="color: var(--accent-warm);"></i>
+          <div>
+            <strong>Illustrative Sample Profiles:</strong> All profiles displayed below are <em>clearly identified fictional sample candidates</em> created to demonstrate our verification dossier format. Actual candidate dossiers are shared privately with registered families after an initial requirement consultation.
+          </div>
+        </div>
+
+        <!-- Sample Profiles Grid -->
+        <div class="row g-4">
+          <!-- Profile 1: Housemaid -->
+          <div class="col-md-6 col-lg-4" data-profile-category="maid">
+            <article class="staff-card">
+              <div class="staff-card-media">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" alt="Meera Nair — Fictional sample profile for Senior Full-Time Housemaid">
+                <span class="sample-profile-pill">Fictional Sample Profile</span>
+                <span class="availability-pill"><i class="bi bi-circle-fill" style="font-size: 0.45rem;"></i> Full-Time / Live-In</span>
+              </div>
+              <div class="staff-card-body">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="h5 mb-0">Meera Nair <span class="fw-normal small" style="color: var(--text-muted);">(36 yrs)</span></h3>
+                  <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">8 Yrs Exp</span>
+                </div>
+                <p class="small fw-semibold mb-3" style="color: var(--accent-teal);">Senior Full-Time Housemaid &amp; Wardrobe Care</p>
+
+                <div class="verified-checks-row">
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> ID Checked</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> Address Checked</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> 2 References</span>
+                </div>
+
+                <p class="small mb-3">
+                  Experienced in structured daily housekeeping for 3–5 BHK residences, delicate garment care, steam ironing, and organized pantry upkeep.
+                </p>
+
+                <div class="d-flex flex-wrap gap-1 mb-4 mt-auto">
+                  <span class="skill-tag">Deep Upkeep</span>
+                  <span class="skill-tag">Fine Laundry</span>
+                  <span class="skill-tag">English &amp; Hindi</span>
+                </div>
+
+                <div class="d-flex gap-2 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <button type="button" class="btn-outline-brand btn-sm flex-grow-1 py-2" data-dossier-id="meera-nair">
+                    <i class="bi bi-file-text"></i> Sample Dossier
+                  </button>
+                  <a href="contact.html?category=Full-Time+Maid+Services&schedule=Full-Time+(Day+Shift)#enquiry-form" class="btn-brand btn-sm flex-grow-1 py-2">
+                    Request Similar
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Profile 2: Home Cook -->
+          <div class="col-md-6 col-lg-4" data-profile-category="cook">
+            <article class="staff-card">
+              <div class="staff-card-media">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=700&q=80" alt="Rajesh Sharma — Fictional sample profile for Family Home Cook">
+                <span class="sample-profile-pill">Fictional Sample Profile</span>
+                <span class="availability-pill"><i class="bi bi-circle-fill" style="font-size: 0.45rem;"></i> Full-Time / Part-Time</span>
+              </div>
+              <div class="staff-card-body">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="h5 mb-0">Rajesh Sharma <span class="fw-normal small" style="color: var(--text-muted);">(41 yrs)</span></h3>
+                  <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">11 Yrs Exp</span>
+                </div>
+                <p class="small fw-semibold mb-3" style="color: var(--accent-teal);">Family Home Cook (Multi-Cuisine &amp; Healthy Diets)</p>
+
+                <div class="verified-checks-row">
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> ID Checked</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> 3 References</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> Hygiene Tested</span>
+                </div>
+
+                <p class="small mb-3">
+                  Prepares balanced North &amp; South Indian, Continental, and low-sodium diabetic-friendly family meals with strict kitchen hygiene and menu planning.
+                </p>
+
+                <div class="d-flex flex-wrap gap-1 mb-4 mt-auto">
+                  <span class="skill-tag">Multi-Cuisine</span>
+                  <span class="skill-tag">Meal Prep</span>
+                  <span class="skill-tag">Kitchen Hygiene</span>
+                </div>
+
+                <div class="d-flex gap-2 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <button type="button" class="btn-outline-brand btn-sm flex-grow-1 py-2" data-dossier-id="rajesh-sharma">
+                    <i class="bi bi-file-text"></i> Sample Dossier
+                  </button>
+                  <a href="contact.html?category=Home+Cooks&schedule=Part-Time+(Morning+/+Evening)#enquiry-form" class="btn-brand btn-sm flex-grow-1 py-2">
+                    Request Similar
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Profile 3: Babysitter & Nanny -->
+          <div class="col-md-6 col-lg-4" data-profile-category="nanny">
+            <article class="staff-card">
+              <div class="staff-card-media">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80" alt="Anita Desai — Fictional sample profile for Infant and Toddler Nanny">
+                <span class="sample-profile-pill">Fictional Sample Profile</span>
+                <span class="availability-pill"><i class="bi bi-circle-fill" style="font-size: 0.45rem;"></i> Full-Time / Live-In</span>
+              </div>
+              <div class="staff-card-body">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="h5 mb-0">Anita Desai <span class="fw-normal small" style="color: var(--text-muted);">(33 yrs)</span></h3>
+                  <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">7 Yrs Exp</span>
+                </div>
+                <p class="small fw-semibold mb-3" style="color: var(--accent-teal);">Infant &amp; Toddler Nanny (Childcare Specialist)</p>
+
+                <div class="verified-checks-row">
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> ID &amp; Address</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> Childcare Refs</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> First-Aid Aware</span>
+                </div>
+
+                <p class="small mb-3">
+                  Warm, attentive caregiver skilled in infant bottle sterilization, weaning nutrition, nap schedules, creative screen-free play, and school drop-offs.
+                </p>
+
+                <div class="d-flex flex-wrap gap-1 mb-4 mt-auto">
+                  <span class="skill-tag">Infant Care</span>
+                  <span class="skill-tag">Early Play</span>
+                  <span class="skill-tag">English, Hindi, Marathi</span>
+                </div>
+
+                <div class="d-flex gap-2 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <button type="button" class="btn-outline-brand btn-sm flex-grow-1 py-2" data-dossier-id="anita-desai">
+                    <i class="bi bi-file-text"></i> Sample Dossier
+                  </button>
+                  <a href="contact.html?category=Babysitters+and+Nannies&schedule=Full-Time+(Day+Shift)#enquiry-form" class="btn-brand btn-sm flex-grow-1 py-2">
+                    Request Similar
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Profile 4: Elderly Caregiver -->
+          <div class="col-md-6 col-lg-4" data-profile-category="elderly">
+            <article class="staff-card">
+              <div class="staff-card-media">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80" alt="Samuel Thomas — Fictional sample profile for Elderly Caregiver">
+                <span class="sample-profile-pill">Fictional Sample Profile</span>
+                <span class="availability-pill"><i class="bi bi-circle-fill" style="font-size: 0.45rem;"></i> Day Shift / Live-In</span>
+              </div>
+              <div class="staff-card-body">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="h5 mb-0">Samuel Thomas <span class="fw-normal small" style="color: var(--text-muted);">(39 yrs)</span></h3>
+                  <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">9 Yrs Exp</span>
+                </div>
+                <p class="small fw-semibold mb-3" style="color: var(--accent-teal);">Elderly Caregiver &amp; Mobility Companion</p>
+
+                <div class="verified-checks-row">
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> ID Checked</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> Elder Care Refs</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> Mobility Trained</span>
+                </div>
+
+                <p class="small mb-3">
+                  Patient, respectful senior care companion assisting with daily walks, timely medication reminders, physiotherapy routines, and clinic visits.
+                </p>
+
+                <div class="d-flex flex-wrap gap-1 mb-4 mt-auto">
+                  <span class="skill-tag">Mobility Support</span>
+                  <span class="skill-tag">Routine Vitals</span>
+                  <span class="skill-tag">English, Hindi, Tamil</span>
+                </div>
+
+                <div class="d-flex gap-2 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <button type="button" class="btn-outline-brand btn-sm flex-grow-1 py-2" data-dossier-id="samuel-thomas">
+                    <i class="bi bi-file-text"></i> Sample Dossier
+                  </button>
+                  <a href="contact.html?category=Elderly+Care+Assistance&schedule=Live-In+(24-Hour+Support)#enquiry-form" class="btn-brand btn-sm flex-grow-1 py-2">
+                    Request Similar
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Profile 5: Live-In Domestic Help -->
+          <div class="col-md-6 col-lg-4" data-profile-category="maid">
+            <article class="staff-card">
+              <div class="staff-card-media">
+                <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=700&q=80" alt="Kavita Joshi — Fictional sample profile for Live-In Domestic Helper">
+                <span class="sample-profile-pill">Fictional Sample Profile</span>
+                <span class="availability-pill"><i class="bi bi-circle-fill" style="font-size: 0.45rem;"></i> 24-Hr Live-In</span>
+              </div>
+              <div class="staff-card-body">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="h5 mb-0">Kavita Joshi <span class="fw-normal small" style="color: var(--text-muted);">(31 yrs)</span></h3>
+                  <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">6 Yrs Exp</span>
+                </div>
+                <p class="small fw-semibold mb-3" style="color: var(--accent-teal);">Live-In All-Round Domestic Helper</p>
+
+                <div class="verified-checks-row">
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> Dual Address Check</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> Family Consent</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> Skill Assessed</span>
+                </div>
+
+                <p class="small mb-3">
+                  Supports working families with comprehensive daily cleaning, laundry, vegetable chopping, breakfast preparation, and evening household upkeep.
+                </p>
+
+                <div class="d-flex flex-wrap gap-1 mb-4 mt-auto">
+                  <span class="skill-tag">Live-In Support</span>
+                  <span class="skill-tag">Kitchen Prep</span>
+                  <span class="skill-tag">Daily Cleaning</span>
+                </div>
+
+                <div class="d-flex gap-2 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <button type="button" class="btn-outline-brand btn-sm flex-grow-1 py-2" data-dossier-id="kavita-joshi">
+                    <i class="bi bi-file-text"></i> Sample Dossier
+                  </button>
+                  <a href="contact.html?category=Live-In+Domestic+Help&schedule=Live-In+(24-Hour+Support)#enquiry-form" class="btn-brand btn-sm flex-grow-1 py-2">
+                    Request Similar
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Profile 6: Executive Housekeeping -->
+          <div class="col-md-6 col-lg-4" data-profile-category="maid">
+            <article class="staff-card">
+              <div class="staff-card-media">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80" alt="Elena Fernandes — Fictional sample profile for Executive Housekeeper">
+                <span class="sample-profile-pill">Fictional Sample Profile</span>
+                <span class="availability-pill"><i class="bi bi-circle-fill" style="font-size: 0.45rem;"></i> Full-Time Day</span>
+              </div>
+              <div class="staff-card-body">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <h3 class="h5 mb-0">Elena Fernandes <span class="fw-normal small" style="color: var(--text-muted);">(38 yrs)</span></h3>
+                  <span class="badge rounded-pill" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">10 Yrs Exp</span>
+                </div>
+                <p class="small fw-semibold mb-3" style="color: var(--accent-teal);">Executive Housekeeper &amp; Fine Residence Care</p>
+
+                <div class="verified-checks-row">
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> ID &amp; Address</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> Estate Refs</span>
+                  <span class="verified-chip"><i class="bi bi-check2-circle"></i> Surface Care</span>
+                </div>
+
+                <p class="small mb-3">
+                  Trained in hospitality-grade housekeeping, delicate marble/wood care, table setting, linen organization, and managing household inventories.
+                </p>
+
+                <div class="d-flex flex-wrap gap-1 mb-4 mt-auto">
+                  <span class="skill-tag">Fine Surfaces</span>
+                  <span class="skill-tag">Table Service</span>
+                  <span class="skill-tag">English &amp; Hindi</span>
+                </div>
+
+                <div class="d-flex gap-2 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <button type="button" class="btn-outline-brand btn-sm flex-grow-1 py-2" data-dossier-id="elena-fernandes">
+                    <i class="bi bi-file-text"></i> Sample Dossier
+                  </button>
+                  <a href="contact.html?category=Professional+Housekeeping&schedule=Full-Time+(Day+Shift)#enquiry-form" class="btn-brand btn-sm flex-grow-1 py-2">
+                    Request Similar
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. DOMESTIC HELP CATEGORIES OVERVIEW
+         ====================================================================== -->
+    <section class="section-py bg-ivory-alt">
+      <div class="container">
+        <div class="row justify-content-between align-items-end mb-5">
+          <div class="col-lg-7">
+            <span class="eyebrow-badge">Comprehensive Household Staffing</span>
+            <h2 class="section-title mb-2">Domestic Help Categories Tailored to Your Routine</h2>
+            <p class="section-subtitle mb-0">
+              Whether you require structured daily housekeeping, specialized infant care, or a 24-hour live-in helper, we match candidates to your exact household rhythm.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <a href="services.html" class="btn-outline-brand">
+              <span>View All 7 Service Categories</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Category 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="category-card">
+              <div class="category-icon-box"><i class="bi bi-house-heart"></i></div>
+              <h3 class="h5">Full-Time Maid Services</h3>
+              <p class="small mb-3">
+                Dedicated 8 to 10-hour daily housemaids responsible for complete home sanitation, laundry, ironing, and organized upkeep.
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center" style="border-color: var(--border-subtle) !important;">
+                <span class="small fw-semibold" style="color: var(--text-muted);">8–10 Hrs / Day</span>
+                <a href="services.html#full-time-maid" class="fw-semibold small">Explore Scope <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="category-card">
+              <div class="category-icon-box"><i class="bi bi-clock-history"></i></div>
+              <h3 class="h5">Part-Time Maid Services</h3>
+              <p class="small mb-3">
+                Consistent 2 to 5-hour morning or evening slot helpers ideal for apartments and working professionals needing daily essentials.
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center" style="border-color: var(--border-subtle) !important;">
+                <span class="small fw-semibold" style="color: var(--text-muted);">2–5 Hrs / Day</span>
+                <a href="services.html#part-time-maid" class="fw-semibold small">Explore Scope <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="category-card">
+              <div class="category-icon-box"><i class="bi bi-shield-lock"></i></div>
+              <h3 class="h5">Live-In Domestic Help</h3>
+              <p class="small mb-3">
+                Dependable residential helpers staying with your family to provide continuous support across housekeeping, kitchen prep, and care.
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center" style="border-color: var(--border-subtle) !important;">
+                <span class="small fw-semibold" style="color: var(--text-muted);">24-Hr Residential</span>
+                <a href="services.html#live-in-help" class="fw-semibold small">Explore Scope <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="category-card">
+              <div class="category-icon-box"><i class="bi bi-stars"></i></div>
+              <h3 class="h5">Professional Housekeeping</h3>
+              <p class="small mb-3">
+                Hospitality-trained housekeepers experienced in caring for luxury interiors, fine fabrics, silverware, and formal guest service.
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center" style="border-color: var(--border-subtle) !important;">
+                <span class="small fw-semibold" style="color: var(--text-muted);">Trained Specialists</span>
+                <a href="services.html#housekeeping" class="fw-semibold small">Explore Scope <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 5 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="category-card">
+              <div class="category-icon-box"><i class="bi bi-egg-fried"></i></div>
+              <h3 class="h5">Home Cooks</h3>
+              <p class="small mb-3">
+                Hygiene-vetted family cooks skilled in regional Indian, Continental, kid-friendly tiffins, and customized therapeutic menus.
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center" style="border-color: var(--border-subtle) !important;">
+                <span class="small fw-semibold" style="color: var(--text-muted);">Part-Time / Full-Time</span>
+                <a href="services.html#home-cooks" class="fw-semibold small">Explore Scope <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 6 & 7 Combined Row -->
+          <div class="col-md-6 col-lg-4">
+            <div class="category-card">
+              <div class="category-icon-box"><i class="bi bi-heart-pulse"></i></div>
+              <h3 class="h5">Nannies &amp; Elderly Caregivers</h3>
+              <p class="small mb-3">
+                Dedicated babysitters, infant nannies, and compassionate senior care attendants screened for patience, safety, and empathy.
+              </p>
+              <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center" style="border-color: var(--border-subtle) !important;">
+                <span class="small fw-semibold" style="color: var(--text-muted);">Child &amp; Senior Care</span>
+                <a href="services.html#babysitters-nannies" class="fw-semibold small">Explore Scope <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. WHY CHOOSE US SECTION
+         ====================================================================== -->
+    <section class="section-py">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80" alt="Organized household living space cared for by professional domestic staff" class="rounded-4 shadow-lg w-100" style="object-fit: cover; min-height: 440px;">
+              <div class="p-4 rounded-4 shadow-md mt-3" style="background-color: var(--bg-navy); color: #FAF8F5;">
+                <div class="d-flex align-items-center gap-3">
+                  <i class="bi bi-award-fill fs-2" style="color: var(--accent-warm);"></i>
+                  <div>
+                    <h4 class="h6 mb-1 text-white">Ethical &amp; Transparent Placement Charter</h4>
+                    <p class="small mb-0" style="color: #C2CEDC;">Clear written agreements, fair domestic worker wage guidance, and zero hidden agency charges.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <span class="eyebrow-badge">Why Discerning Families Choose Us</span>
+            <h2 class="section-title mb-3">A Disciplined Staffing Agency Built on Accountability</h2>
+            <p class="section-subtitle mb-4">
+              Inviting someone into your home requires far more than an informal referral. We replace guesswork with structured documentation, personal interviews, and ongoing placement guidance.
+            </p>
+
+            <div class="row g-4">
+              <div class="col-sm-6">
+                <div class="d-flex gap-3">
+                  <div class="category-icon-box flex-shrink-0 mb-0" style="width: 46px; height: 46px; font-size: 1.2rem;">
+                    <i class="bi bi-person-vcard"></i>
+                  </div>
+                  <div>
+                    <h3 class="h6 mb-1">Documented Identity &amp; Traceability</h3>
+                    <p class="small mb-0">We verify government IDs, permanent residential addresses, and emergency family contacts prior to shortlisting.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="d-flex gap-3">
+                  <div class="category-icon-box flex-shrink-0 mb-0" style="width: 46px; height: 46px; font-size: 1.2rem;">
+                    <i class="bi bi-telephone-outbound"></i>
+                  </div>
+                  <div>
+                    <h3 class="h6 mb-1">Direct Employer Reference Audits</h3>
+                    <p class="small mb-0">Our counselors speak directly with past household employers to confirm punctuality, temperament, and honesty.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="d-flex gap-3">
+                  <div class="category-icon-box flex-shrink-0 mb-0" style="width: 46px; height: 46px; font-size: 1.2rem;">
+                    <i class="bi bi-arrow-repeat"></i>
+                  </div>
+                  <div>
+                    <h3 class="h6 mb-1">Structured Replacement Assurance</h3>
+                    <p class="small mb-0">Every placement agreement includes a clearly defined replacement period if compatibility or attendance issues arise.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="d-flex gap-3">
+                  <div class="category-icon-box flex-shrink-0 mb-0" style="width: 46px; height: 46px; font-size: 1.2rem;">
+                    <i class="bi bi-Sliders"></i>
+                  </div>
+                  <div>
+                    <h3 class="h6 mb-1">Personalized Counselor Matching</h3>
+                    <p class="small mb-0">We match candidates based on language comfort, dietary rules, pet-friendliness, and household routines.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3">
+              <a href="about.html" class="btn-outline-brand">
+                <span>Read Our Agency Standards</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. STAFF VERIFICATION & BACKGROUND-CHECK HIGHLIGHTS
+         ====================================================================== -->
+    <section class="section-py bg-navy-section">
+      <div class="container">
+        <div class="row align-items-end justify-content-between mb-5 g-3">
+          <div class="col-lg-7">
+            <span class="eyebrow-badge eyebrow-badge-light">
+              <i class="bi bi-shield-fill-check"></i>
+              <span>Our Screening Architecture</span>
+            </span>
+            <h2 class="section-title mb-2">How We Screen &amp; Verify Every Candidate</h2>
+            <p class="mb-0" style="color: var(--text-on-navy-muted); max-width: 62ch;">
+              Before any candidate is introduced to your family, they complete our structured screening workflow. You receive a clear verification summary dossier prior to conducting your interview.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="verification.html" class="btn-light-editorial">
+              <span>Full 8-Stage Verification Guide</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-6 col-lg-3">
+            <div class="p-4 rounded-4 h-100" style="background-color: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge rounded-pill" style="background-color: var(--accent-teal); color: #FFF;">Stage 01–02</span>
+                <i class="bi bi-person-badge fs-4" style="color: var(--accent-warm);"></i>
+              </div>
+              <h3 class="h5 text-white">Identity &amp; Address Verification</h3>
+              <p class="small mb-0" style="color: var(--text-on-navy-muted);">
+                Cross-verification of official government photo ID, age eligibility, current local residence, and permanent home address records.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="p-4 rounded-4 h-100" style="background-color: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge rounded-pill" style="background-color: var(--accent-teal); color: #FFF;">Stage 03–04</span>
+                <i class="bi bi-journal-check fs-4" style="color: var(--accent-warm);"></i>
+              </div>
+              <h3 class="h5 text-white">Reference &amp; Employment History</h3>
+              <p class="small mb-0" style="color: var(--text-on-navy-muted);">
+                Structured phone verification with previous household employers and family references to confirm tenure, conduct, and reliability.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="p-4 rounded-4 h-100" style="background-color: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge rounded-pill" style="background-color: var(--accent-teal); color: #FFF;">Stage 05</span>
+                <i class="bi bi-file-earmark-lock2 fs-4" style="color: var(--accent-warm);"></i>
+              </div>
+              <h3 class="h5 text-white">Authorized Background Checks</h3>
+              <p class="small mb-0" style="color: var(--text-on-navy-muted);">
+                Public court database checks and police verification facilitation conducted strictly where legally available and with written candidate consent.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="p-4 rounded-4 h-100" style="background-color: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge rounded-pill" style="background-color: var(--accent-teal); color: #FFF;">Stage 06–08</span>
+                <i class="bi bi-clipboard2-check fs-4" style="color: var(--accent-warm);"></i>
+              </div>
+              <h3 class="h5 text-white">Skill &amp; Suitability Evaluation</h3>
+              <p class="small mb-0" style="color: var(--text-on-navy-muted);">
+                Practical evaluation of culinary, childcare, or housekeeping competence alongside an in-person counselor interview.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Responsible Transparency Disclaimer -->
+        <div class="p-4 rounded-4" style="background-color: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.14);">
+          <div class="row align-items-center g-3">
+            <div class="col-lg-9">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-shield-exclamation fs-4" style="color: var(--accent-warm);"></i>
+                <p class="small mb-0" style="color: var(--text-on-navy-muted);">
+                  <strong class="text-white">Transparency &amp; Compliance Standard:</strong> Verification procedures are performed in accordance with applicable laws, written candidate consent, and the availability of official or public records. While thorough screening significantly reduces placement risk, no ethical agency can claim 100% risk-free placements; we always advise families to participate in trial days and follow prudent home security practices.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 text-lg-end">
+              <a href="verification.html#trust-safety" class="btn-outline-light-editorial btn-sm">Read Safety Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. SIMPLE HOW-IT-WORKS SECTION
+         ====================================================================== -->
+    <section class="section-py">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 680px;">
+          <span class="eyebrow-badge">Simple 4-Step Placement Journey</span>
+          <h2 class="section-title">How Our Placement Process Works</h2>
+          <p class="section-subtitle mx-auto">
+            From your initial consultation to post-placement follow-ups, a dedicated placement counselor guides you through every step.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="verification-step-card">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <span class="step-number-badge">01</span>
+                <span class="badge rounded-pill" style="background-color: var(--bg-secondary); color: var(--text-secondary);">Day 1</span>
+              </div>
+              <h3 class="h5">Share Household Needs</h3>
+              <p class="small mb-0">
+                Tell us your required role, work hours, household size, dietary preferences, and specific expectations via our form or counselor call.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="verification-step-card">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <span class="step-number-badge">02</span>
+                <span class="badge rounded-pill" style="background-color: var(--bg-secondary); color: var(--text-secondary);">Days 2–3</span>
+              </div>
+              <h3 class="h5">Review Verified Dossiers</h3>
+              <p class="small mb-0">
+                Receive 2 to 4 curated candidate profiles complete with verification records, work history, salary expectations, and counselor notes.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="verification-step-card">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <span class="step-number-badge">03</span>
+                <span class="badge rounded-pill" style="background-color: var(--bg-secondary); color: var(--text-secondary);">Days 4–6</span>
+              </div>
+              <h3 class="h5">Interview &amp; Supervised Trial</h3>
+              <p class="small mb-0">
+                Conduct video or in-person interviews and schedule a paid 2- to 3-day trial period in your home to evaluate practical compatibility.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="verification-step-card">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <span class="step-number-badge">04</span>
+                <span class="badge rounded-pill" style="background-color: var(--bg-secondary); color: var(--text-secondary);">Ongoing</span>
+              </div>
+              <h3 class="h5">Placement &amp; Support</h3>
+              <p class="small mb-0">
+                Sign a transparent placement agreement with clear duty schedules, attendance standards, and 6-month replacement support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. CUSTOMER TESTIMONIALS
+         ====================================================================== -->
+    <section class="section-py bg-ivory-alt">
+      <div class="container">
+        <div class="row align-items-end justify-content-between mb-5">
+          <div class="col-lg-7">
+            <span class="eyebrow-badge">Household Experiences</span>
+            <h2 class="section-title mb-2">Trusted by Working Parents &amp; Multi-Generational Homes</h2>
+            <p class="section-subtitle mb-0">
+              Read how families across major metro neighborhoods experienced our structured screening and placement process.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
+              <span class="text-warning"><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i></span>
+              <span class="small fw-bold">4.9 / 5 Client Satisfaction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="testimonial-card">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Full-Time Infant Nanny</span>
+                  <span class="text-warning small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                </div>
+                <p class="testimonial-quote mb-4">
+                  "Returning to work after maternity leave was stressful until Hearth &amp; Haven shared three nanny dossiers. Being able to speak directly with her two previous employers and review her address verification gave my husband and me genuine peace of mind."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; background-color: var(--bg-navy); color: #FFF;">SR</div>
+                <div>
+                  <div class="fw-bold small" style="color: var(--text-primary);">Dr. Shruti &amp; Karan Rao</div>
+                  <div class="small" style="font-size: 0.78rem; color: var(--text-muted);">Working Parents • Indiranagar</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="testimonial-card">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Elderly Care Companion</span>
+                  <span class="text-warning small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                </div>
+                <p class="testimonial-quote mb-4">
+                  "We needed a compassionate daytime attendant for my 81-year-old father recovering from hip surgery. The counselor understood our medical routine, arranged a 3-day trial, and checked in every month thereafter."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; background-color: var(--accent-teal); color: #FFF;">VM</div>
+                <div>
+                  <div class="fw-bold small" style="color: var(--text-primary);">Vikramaditya Mehta</div>
+                  <div class="small" style="font-size: 0.78rem; color: var(--text-muted);">Senior Care Household • South Mumbai</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="testimonial-card">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="badge" style="background-color: var(--bg-teal-soft); color: var(--accent-teal);">Home Cook + Housemaid</span>
+                  <span class="text-warning small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                </div>
+                <p class="testimonial-quote mb-4">
+                  "Unlike informal agencies that send unscreened candidates without notice, Hearth &amp; Haven set clear expectations on salary, weekly offs, and kitchen hygiene from day one. Our home cook has been with us for over 14 months now."
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; background-color: var(--accent-sage); color: #FFF;">AK</div>
+                <div>
+                  <div class="fw-bold small" style="color: var(--text-primary);">Ananya &amp; Rohit Kapoor</div>
+                  <div class="small" style="font-size: 0.78rem; color: var(--text-muted);">Family of Four • Gurugram</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. FREQUENTLY ASKED QUESTIONS (FAQ)
+         ====================================================================== -->
+    <section class="section-py">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <span class="eyebrow-badge">Common Questions</span>
+            <h2 class="section-title mb-3">Frequently Asked Questions About Staff Placement</h2>
+            <p class="section-subtitle mb-4">
+              Everything you need to know about our screening depth, trial periods, replacement policies, and salary structures.
+            </p>
+            <div class="p-4 rounded-4" style="background-color: var(--bg-secondary); border: 1px solid var(--border-color);">
+              <h3 class="h6 mb-2">Have a specific household requirement?</h3>
+              <p class="small mb-3">Speak directly with our placement desk to discuss custom shift hours, twin childcare, or specialized senior care.</p>
+              <a href="contact.html" class="btn-brand btn-sm">
+                <i class="bi bi-chat-dots"></i>
+                <span>Contact a Placement Counselor</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="accordion custom-accordion" id="homeFaqAccordion">
+              <!-- FAQ 1 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faqHeadingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                    What verification documents do I receive before hiring a domestic helper?
+                  </button>
+                </h3>
+                <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#homeFaqAccordion">
+                  <div class="accordion-body">
+                    Before confirming a placement, you receive a structured Candidate Verification Dossier containing verified government photo ID details, current and permanent address confirmation, summary notes from previous employer reference checks, skill assessment scores, and status of any legally authorized background or police verification applications.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faqHeadingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                    Can we conduct a trial period before finalizing the placement?
+                  </button>
+                </h3>
+                <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#homeFaqAccordion">
+                  <div class="accordion-body">
+                    Yes. After your initial interview, we encourage a 2- to 3-day paid trial period in your home. This allows your family to observe practical skills, hygiene habits, punctuality, and comfort level before signing the formal placement agreement.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faqHeadingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                    What happens if the placed staff member leaves or is not a suitable fit?
+                  </button>
+                </h3>
+                <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#homeFaqAccordion">
+                  <div class="accordion-body">
+                    Our standard placement agreement includes a 6-month replacement assurance window (up to 3 replacements at no additional agency placement fee). If either party ends the arrangement within the covered period, your counselor immediately initiates a fresh shortlist.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faqHeadingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                    How are monthly salaries paid to the domestic helper?
+                  </button>
+                </h3>
+                <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#homeFaqAccordion">
+                  <div class="accordion-body">
+                    To ensure complete financial transparency and prevent intermediary deductions, families pay the agreed monthly salary directly to the domestic worker's bank account or documented receipt log. Hearth &amp; Haven charges only a transparent one-time placement &amp; verification fee upon final confirmation.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 5 -->
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faqHeadingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                    How quickly can you arrange a shortlist of candidates?
+                  </button>
+                </h3>
+                <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive" data-bs-parent="#homeFaqAccordion">
+                  <div class="accordion-body">
+                    For standard full-time maids, part-time helpers, and home cooks, we typically share verified profiles within 48 to 72 hours. For specialized live-in nannies or elderly caregivers with specific language or mobility requirements, shortlisting typically takes 3 to 5 business days.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         9. STRONG FINAL ENQUIRY CTA
+         ====================================================================== -->
+    <section class="section-py-sm">
+      <div class="container">
+        <div class="p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: linear-gradient(135deg, #132238 0%, #1F636C 100%); color: #FAF8F5;">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="eyebrow-badge eyebrow-badge-light mb-3">Begin Your Household Consultation</span>
+              <h2 class="section-title text-white mb-2">Ready to Find Dependable, Verified Domestic Help?</h2>
+              <p class="mb-0" style="color: rgba(250, 248, 245, 0.85); max-width: 60ch;">
+                Share your household requirements today and receive a curated shortlist of screened candidates with complete verification dossiers.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
+                <a href="contact.html#enquiry-form" class="btn-light-editorial">
+                  <span>Find a Helper Now</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+                <a href="verification.html" class="btn-outline-light-editorial">
+                  <span>Verification Standards</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       SAMPLE CANDIDATE DOSSIER MODAL
+       ======================================================================== -->
+  <div class="modal fade" id="sampleDossierModal" tabindex="-1" aria-labelledby="dossierModalName" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge rounded-pill mb-1" style="background-color: var(--accent-warm-soft); color: var(--accent-warm);">Fictional Sample Candidate Dossier</span>
+            <h4 class="modal-title h5 mb-0" id="dossierModalName">Sample Candidate</h4>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="fw-semibold mb-3" style="color: var(--accent-teal);" id="dossierModalRole">Role Title</p>
+          <div class="row g-3 mb-4">
+            <div class="col-sm-4">
+              <div class="p-3 rounded-3" style="background-color: var(--bg-secondary);">
+                <div class="small text-muted">Experience</div>
+                <div class="fw-semibold small" id="dossierModalExp">-</div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="p-3 rounded-3" style="background-color: var(--bg-secondary);">
+                <div class="small text-muted">Preferred Schedule</div>
+                <div class="fw-semibold small" id="dossierModalSchedule">-</div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="p-3 rounded-3" style="background-color: var(--bg-secondary);">
+                <div class="small text-muted">Languages Spoken</div>
+                <div class="fw-semibold small" id="dossierModalLang">-</div>
+              </div>
+            </div>
+          </div>
+
+          <h5 class="h6">Counselor Assessment Summary</h5>
+          <p class="small mb-4" id="dossierModalSummary">-</p>
+
+          <h5 class="h6">Sample Verification Checklist</h5>
+          <ul class="list-unstyled small mb-3" id="dossierModalChecks"></ul>
+
+          <div class="p-3 rounded-3 small" style="background-color: var(--bg-secondary); color: var(--text-muted);">
+            <i class="bi bi-info-circle me-1"></i>
+            <strong>Privacy &amp; Sample Notice:</strong> This is an illustrative sample dossier showing how Hearth &amp; Haven structures candidate profiles. Real candidate identity documents are shared only with verified client families.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-outline-brand btn-sm" data-bs-dismiss="modal">Close Preview</button>
+          <a href="contact.html#enquiry-form" id="dossierModalCta" class="btn-brand btn-sm">
+            <span>Request Similar Candidate</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       PROFESSIONAL MULTI-COLUMN FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5 pb-5 border-bottom footer-divider">
+        <!-- Col 1: Brand & Mission -->
+        <div class="col-lg-4">
+          <a class="navbar-brand-wrap mb-3" href="index.html">
+            <span class="brand-mark">H</span>
+            <span class="brand-text">
+              <span class="brand-name footer-brand-title">Hearth &amp; Haven</span>
+              <span class="brand-tagline footer-brand-subtitle">Domestic Placement Agency</span>
+            </span>
+          </a>
+          <p class="small mb-4 footer-text-secondary">
+            Connecting discerning households with carefully screened housemaids, home cooks, nannies, babysitters, and elderly caregivers through transparent, ethical placement standards.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/919820011223" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <h5>Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 (Classic)</a></li>
+            <li><a href="home-2.html">Home 2 (Editorial)</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="verification.html">Verification Process</a></li>
+            <li><a href="about.html">About Agency</a></li>
+            <li><a href="contact.html">Contact &amp; Enquiry</a></li>
+            <li><a href="dashboard.html">Client Dashboard</a></li>
+            <li><a href="signup.html">Client Sign Up</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Domestic Staffing Categories -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <h5>Staffing Categories</h5>
+          <ul class="footer-links">
+            <li><a href="services.html#full-time-maid">Full-Time Maid Services</a></li>
+            <li><a href="services.html#part-time-maid">Part-Time Maid Services</a></li>
+            <li><a href="services.html#live-in-help">Live-In Domestic Help</a></li>
+            <li><a href="services.html#housekeeping">Professional Housekeeping</a></li>
+            <li><a href="services.html#home-cooks">Verified Home Cooks</a></li>
+            <li><a href="services.html#babysitters-nannies">Babysitters &amp; Nannies</a></li>
+            <li><a href="services.html#elderly-care">Elderly Care Assistance</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Household Guide -->
+        <div class="col-md-4 col-lg-3">
+          <h5>Placement Desk</h5>
+          <ul class="list-unstyled small mb-4 footer-text-secondary">
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-geo-alt text-info"></i>
+              <span>Suite 402, Heritage Chambers, Worli, Mumbai 400018</span>
+            </li>
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-telephone text-info"></i>
+              <span>+91 (022) 4890-7200 / +91 98200 11223</span>
+            </li>
+            <li class="mb-2 d-flex gap-2">
+              <i class="bi bi-envelope text-info"></i>
+              <span>placements@hearthandhaven.in</span>
+            </li>
+            <li class="d-flex gap-2">
+              <i class="bi bi-clock text-info"></i>
+              <span>Mon – Sat: 9:00 AM – 7:00 PM</span>
+            </li>
+          </ul>
+
+          <form class="js-newsletter-form" novalidate>
+            <label for="footerEmail1" class="form-label footer-brand-title small mb-1">Download Hiring &amp; Salary Guide</label>
+            <div class="input-group input-group-sm">
+              <input type="email" id="footerEmail1" class="form-control footer-input" placeholder="Your email address" required>
+              <button class="btn btn-info text-white fw-semibold" type="submit">Send</button>
+            </div>
+            <div class="js-newsletter-msg mt-1"></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Legal & Disclaimer -->
+      <div class="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-muted">
+        <div>
+          &copy; 2026 Hearth &amp; Haven Domestic Staffing Pvt. Ltd. All rights reserved.
+        </div>
+        <div class="text-md-end">
+          Verification scope depends on applicable laws, candidate consent, and official record availability. Sample profiles are fictional illustrations.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 JS Bundle & GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Sign Up | Hearth &amp; Haven Domestic Staffing</title>
+  <meta name="description" content="Create your Hearth & Haven client account to request verified domestic helpers, review candidate verification dossiers, and schedule home trials.">
+
+  <!-- Pre-paint Theme & RTL Initialization -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('hearth_haven_theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+        var savedDir = localStorage.getItem('hearth_haven_direction');
+        if (savedDir === 'rtl' || savedDir === 'ltr') {
+          document.documentElement.setAttribute('dir', savedDir);
+        }
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- Favicon (Brand Icon) -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Floating Controls Top Right -->
+  <div class="auth-floating-controls">
+    <a href="index.html" class="theme-toggle-btn text-decoration-none" title="Back to Homepage" aria-label="Back to Homepage">
+      <i class="bi bi-house"></i>
+    </a>
+    <button type="button" class="rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+    <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Toggle color theme">
+      <i class="bi bi-moon-stars-fill"></i>
+    </button>
+  </div>
+
+  <main class="auth-page-wrapper">
+    <!-- Center-Aligned Auth Card -->
+    <div class="auth-card-centered js-gsap-reveal" style="max-width: 520px;">
+      <!-- Brandname inside box in top center -->
+      <div class="text-center mb-4">
+        <a class="navbar-brand-wrap d-inline-flex align-items-center gap-2 mb-3" href="index.html">
+          <span class="brand-mark">H</span>
+          <span class="brand-text text-start">
+            <span class="brand-name">Hearth &amp; Haven</span>
+            <span class="brand-tagline">Domestic Placement Agency</span>
+          </span>
+        </a>
+        <h1 class="h4 mb-1">Create Client Account</h1>
+        <p class="small text-muted mb-0">Register your household to request verified helper dossiers</p>
+      </div>
+
+      <!-- Registration Form with Inputs in Separate Lines -->
+      <form id="clientSignupForm" class="needs-validation" novalidate>
+        <!-- Line 1: Full Name -->
+        <div class="mb-3">
+          <label for="signupFullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+          <input type="text" id="signupFullName" name="fullName" class="form-control" placeholder="e.g., Vikramaditya &amp; Priya Mehta" required>
+          <div class="invalid-feedback">Please enter your full name.</div>
+        </div>
+
+        <!-- Line 2: Email Address -->
+        <div class="mb-3">
+          <label for="signupEmail" class="form-label">Email Address <span class="text-danger">*</span></label>
+          <input type="email" id="signupEmail" name="email" class="form-control" placeholder="name@example.com" required>
+          <div class="invalid-feedback">Please enter a valid email address.</div>
+        </div>
+
+        <!-- Line 3: Mobile Number -->
+        <div class="mb-3">
+          <label for="signupMobile" class="form-label">Mobile Number <span class="text-danger">*</span></label>
+          <input type="tel" id="signupMobile" name="mobile" class="form-control" placeholder="+91 98200 11223" pattern="[0-9+\-\s()]{8,16}" required>
+          <div class="invalid-feedback">Please enter a valid mobile number.</div>
+        </div>
+
+        <!-- Line 4: Password -->
+        <div class="mb-3">
+          <label for="signupPassword" class="form-label">Password <span class="text-danger">*</span></label>
+          <div class="password-field-wrapper">
+            <input type="password" id="signupPassword" name="password" class="form-control pe-5" placeholder="Minimum 8 characters" minlength="8" required>
+            <button type="button" class="password-toggle-btn" data-toggle-password="signupPassword" aria-label="Show password">
+              <i class="bi bi-eye"></i>
+            </button>
+            <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+          </div>
+        </div>
+
+        <!-- Line 5: Confirm Password -->
+        <div class="mb-3">
+          <label for="signupConfirmPassword" class="form-label">Confirm Password <span class="text-danger">*</span></label>
+          <div class="password-field-wrapper">
+            <input type="password" id="signupConfirmPassword" name="confirmPassword" class="form-control pe-5" placeholder="Re-enter password" minlength="8" required>
+            <button type="button" class="password-toggle-btn" data-toggle-password="signupConfirmPassword" aria-label="Show confirm password">
+              <i class="bi bi-eye"></i>
+            </button>
+            <div class="invalid-feedback" id="confirmPasswordFeedback">Please confirm your password.</div>
+          </div>
+        </div>
+
+        <!-- Line 6: Password Strength Indicator -->
+        <div class="mb-3">
+          <div class="progress" style="height: 5px; background-color: var(--bg-secondary);">
+            <div id="passwordStrengthBar" class="progress-bar bg-secondary" role="progressbar" style="width: 0%;" aria-label="Password strength"></div>
+          </div>
+          <div id="passwordStrengthText" class="small mt-1" style="font-size: 0.76rem; color: var(--text-muted);">Enter at least 8 characters</div>
+        </div>
+
+        <!-- Line 7: Terms & Conditions Acceptance -->
+        <div class="mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="signupTerms" required>
+            <label class="form-check-label small" for="signupTerms">
+              I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsPolicyModal" class="fw-semibold text-decoration-underline">Terms &amp; Conditions and Ethical Placement Charter</a>.
+            </label>
+            <div class="invalid-feedback">You must accept the Terms &amp; Conditions to create an account.</div>
+          </div>
+        </div>
+
+        <!-- Line 8: Submit Button -->
+        <button type="submit" class="btn-brand w-100 py-3 mb-2">
+          <i class="bi bi-person-check-fill"></i>
+          <span>Create Account</span>
+        </button>
+
+        <!-- Feedback Container -->
+        <div id="signupFeedback" aria-live="polite"></div>
+
+        <!-- Social Icons in Bottom: Google & Apple -->
+        <div class="auth-divider">
+          <span>or register with</span>
+        </div>
+
+        <div class="row g-2 mb-4">
+          <div class="col-6">
+            <button type="button" class="btn-social">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Google</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button type="button" class="btn-social">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.08 1.73-.95 2.76 1 .08 2.05-.51 2.68-1.26z"/>
+              </svg>
+              <span>Apple</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Link to Login -->
+        <div class="text-center pt-3 border-top small" style="border-color: var(--border-subtle) !important;">
+          Already have a client account? <a href="login.html" class="fw-bold">Log In Here &rarr;</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Terms & Placement Policy Modal -->
+  <div class="modal fade" id="termsPolicyModal" tabindex="-1" aria-labelledby="termsPolicyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title h5" id="termsPolicyModalLabel">Client Terms &amp; Ethical Placement Charter</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 small">
+          <h4 class="h6">1. Confidential Candidate Dossiers</h4>
+          <p>Candidate verification dossiers shared with registered client families contain sensitive personal information and may be used solely for evaluating household employment with Hearth &amp; Haven.</p>
+          <h4 class="h6">2. Ethical Working Conditions &amp; Direct Wages</h4>
+          <p>Client families agree to provide safe working conditions, agreed rest periods, weekly leaves, and direct monthly salary payments to placed domestic staff without arbitrary deductions.</p>
+          <h4 class="h6">3. Verification &amp; Legal Scope</h4>
+          <p>All screening checks are performed in accordance with applicable laws, written candidate consent, and official record availability. Families are encouraged to complete local municipal police verification and participate in the supervised trial period.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-brand btn-sm" data-bs-dismiss="modal">I Understand</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
