@@ -1067,16 +1067,15 @@ img {
   border-radius: var(--radius-md);
   overflow: hidden;
   width: 100%;
-  height: 310px;
-  min-height: 310px;
-  max-height: 310px;
+  height: 100%;
+  min-height: 320px;
 }
 
 .dossier-media-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 25%;
   display: block;
   transition: transform var(--transition-base);
 }
@@ -1708,13 +1707,17 @@ img {
   filter: invert(1) grayscale(100%) brightness(200%);
 }
 
-/* Table Styling */
-.comparison-table {
+/* Table Styling & Responsive Horizontal Scroll Engine */
+.comparison-table,
+.table-responsive.comparison-table {
   background-color: var(--bg-surface);
   border-radius: var(--radius-lg);
-  overflow: hidden;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
+  max-width: 100%;
 }
 
 .comparison-table .table {
@@ -1725,6 +1728,36 @@ img {
   color: var(--text-primary) !important;
   border-color: var(--border-color) !important;
   margin-bottom: 0 !important;
+  min-width: 620px !important;
+  width: 100% !important;
+}
+
+.comparison-table .table.dashboard-table,
+.dashboard-table {
+  min-width: 680px !important;
+}
+
+/* Styled Touch Scrollbar for Horizontal Table Scroll */
+.table-responsive.comparison-table::-webkit-scrollbar,
+.comparison-table::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive.comparison-table::-webkit-scrollbar-track,
+.comparison-table::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-pill);
+}
+
+.table-responsive.comparison-table::-webkit-scrollbar-thumb,
+.comparison-table::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-pill);
+}
+
+.table-responsive.comparison-table::-webkit-scrollbar-thumb:hover,
+.comparison-table::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-teal);
 }
 
 .comparison-table .table > :not(caption) > * > * {
@@ -1997,12 +2030,12 @@ img {
   }
   .staff-card-media img {
     object-fit: cover !important;
-    object-position: center top !important;
+    object-position: center 20% !important;
   }
 
   .editorial-pane-img {
     min-height: 350px !important;
-    object-position: center top !important;
+    object-position: center 20% !important;
   }
 
   .home2-bento-main {
@@ -2014,7 +2047,7 @@ img {
 }
 
 /* Candidate Dossier Cards in Home 2: 2 Cards per Row at 1024px View */
-@media (min-width: 992px) and (max-width: 1024px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
   .dossier-card-col,
   .row:has(> [class*="col-"] [data-dossier-id]) > [class*="col-"],
   #editorial-staff .row.g-4 > [class*="col-"] {
@@ -2043,15 +2076,17 @@ img {
   }
 
   .dossier-card-col .col-sm-5 {
-    flex: 0 0 38% !important;
-    max-width: 38% !important;
-    width: 38% !important;
+    flex: 0 0 35% !important;
+    max-width: 35% !important;
+    width: 35% !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .dossier-card-col .col-sm-7 {
-    flex: 0 0 62% !important;
-    max-width: 62% !important;
-    width: 62% !important;
+    flex: 0 0 65% !important;
+    max-width: 65% !important;
+    width: 65% !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
@@ -2060,19 +2095,20 @@ img {
   /* Exact Uniform Image Size Across All Cards at 1024px */
   .dossier-card-col .dossier-media-frame {
     width: 100% !important;
-    height: 290px !important;
-    min-height: 290px !important;
-    max-height: 290px !important;
+    height: 100% !important;
+    min-height: 330px !important;
+    max-height: none !important;
     border-radius: var(--radius-md) !important;
     overflow: hidden !important;
     position: relative !important;
+    display: flex !important;
   }
 
   .dossier-card-col .dossier-media-frame img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center top !important;
+    object-position: center 25% !important;
     display: block !important;
   }
 
@@ -2126,61 +2162,69 @@ img {
     white-space: nowrap !important;
   }
 
-  /* Nicely Designed Buttons at 1024px View */
+  /* Nicely Designed Buttons at 1024px View: Stacking vertically gives generous full-width padding and eliminates border crowding */
   .dossier-card-col .d-flex.gap-2 {
-    gap: 0.5rem !important;
+    flex-direction: column !important;
+    gap: 0.55rem !important;
     margin-top: auto !important;
-    padding-top: 0.5rem !important;
+    padding-top: 0.8rem !important;
     display: flex !important;
-    align-items: center !important;
     width: 100% !important;
   }
 
   .dossier-card-col .d-flex.gap-2 > .btn-brand,
-  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
-    height: 38px !important;
-    min-height: 38px !important;
-    padding: 0.45rem 0.5rem !important;
-    font-size: 0.78rem !important;
+  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand,
+  .dossier-card-col [data-dossier-id] {
+    width: 100% !important;
+    min-width: 100% !important;
+    flex: none !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0.55rem 1.25rem !important;
+    font-size: 0.84rem !important;
     font-weight: 600 !important;
-    letter-spacing: 0.01em !important;
+    letter-spacing: 0.025em !important;
     border-radius: var(--radius-sm) !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
     white-space: nowrap !important;
-    transition: all var(--transition-fast) !important;
-    box-shadow: 0 2px 6px rgba(19, 34, 56, 0.08) !important;
+    line-height: 1.2 !important;
+    transition: all var(--transition-base) !important;
+    box-sizing: border-box !important;
+  }
+
+  .dossier-card-col [data-dossier-id],
+  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
+    background-color: var(--bg-surface) !important;
+    border: 1.5px solid var(--accent-teal) !important;
+    color: var(--accent-teal) !important;
+    box-shadow: 0 2px 6px rgba(19, 34, 56, 0.06) !important;
+  }
+
+  .dossier-card-col [data-dossier-id]:hover,
+  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand:hover {
+    background-color: var(--accent-teal) !important;
+    color: #FFFFFF !important;
+    border-color: var(--accent-teal) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(31, 99, 108, 0.22) !important;
   }
 
   .dossier-card-col .d-flex.gap-2 > .btn-brand {
     background-color: var(--accent-teal) !important;
     border: 1.5px solid var(--accent-teal) !important;
     color: #FFFFFF !important;
+    box-shadow: 0 2px 8px rgba(31, 99, 108, 0.2) !important;
   }
 
   .dossier-card-col .d-flex.gap-2 > .btn-brand:hover {
     background-color: var(--accent-teal-hover) !important;
     border-color: var(--accent-teal-hover) !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px rgba(31, 99, 108, 0.25) !important;
-  }
-
-  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
-    background-color: var(--bg-surface) !important;
-    border: 1.5px solid var(--accent-teal) !important;
-    color: var(--accent-teal) !important;
-  }
-
-  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand:hover {
-    background-color: var(--bg-teal-soft) !important;
-    color: var(--accent-teal-hover) !important;
-    border-color: var(--accent-teal-hover) !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px rgba(31, 99, 108, 0.15) !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(31, 99, 108, 0.3) !important;
   }
 }
 
@@ -2204,7 +2248,7 @@ img {
     display: none;
   }
 
-  /* Editorial Dossier Showcase in Home 2: Align 1 Card per Row in Tab View 768px */
+  /* Editorial Dossier Showcase in Home 2: Images Coming Full in Tab View 768px */
   .dossier-card-col,
   .row:has(> [class*="col-"] [data-dossier-id]) > [class*="col-"],
   #editorial-staff .row.g-4 > [class*="col-"] {
@@ -2219,14 +2263,49 @@ img {
     padding: 1.5rem !important;
   }
 
-  .dossier-card-col .dossier-media-frame {
-    min-height: 260px !important;
+  .dossier-card-col .row.align-items-stretch {
     height: 100% !important;
+    align-items: stretch !important;
+  }
+
+  .dossier-card-col .col-sm-5 {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 0 0 42% !important;
+    max-width: 42% !important;
+    width: 42% !important;
+    height: auto !important;
+  }
+
+  .dossier-card-col .col-sm-7 {
+    flex: 0 0 58% !important;
+    max-width: 58% !important;
+    width: 58% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .dossier-card-col .dossier-media-frame {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 380px !important;
+    max-height: none !important;
+    flex: 1 1 100% !important;
+    border-radius: var(--radius-md) !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: flex !important;
   }
 
   .dossier-card-col .dossier-media-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
     object-fit: cover !important;
-    object-position: center top !important;
+    object-position: center 25% !important;
+    display: block !important;
+    flex: 1 1 auto !important;
   }
 
   .dossier-card-col .small.fw-bold {
@@ -2258,10 +2337,12 @@ img {
   .dossier-card-col .d-flex.gap-2 > .btn-brand,
   .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
     flex: 0 0 auto !important;
-    padding: 0.45rem 1.15rem !important;
+    padding: 0.5rem 1.25rem !important;
     font-size: 0.84rem !important;
-    height: 38px !important;
-    min-height: 38px !important;
+    font-weight: 600 !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    border-radius: var(--radius-sm) !important;
     white-space: nowrap !important;
   }
 }
@@ -2285,7 +2366,52 @@ img {
 }
 
 /* Mobile & Tablet Button Overflow Prevention & Auth Floating Controls Spacing */
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
+  .dossier-card-col .col-sm-5,
+  .dossier-card-col .col-sm-7 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .dossier-card-col .dossier-media-frame {
+    height: 380px !important;
+    min-height: 380px !important;
+    max-height: none !important;
+    width: 100% !important;
+  }
+  .dossier-card-col .dossier-media-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 25% !important;
+    display: block !important;
+  }
+  .dossier-card-col .d-flex.gap-2 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    margin-top: 0.85rem !important;
+    width: 100% !important;
+  }
+  .dossier-card-col .d-flex.gap-2 > .btn-brand,
+  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand,
+  .dossier-card-col [data-dossier-id] {
+    flex: 1 1 calc(50% - 0.25rem) !important;
+    min-width: 130px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    border-radius: var(--radius-sm) !important;
+    box-sizing: border-box !important;
+  }
+
   .btn-brand,
   .btn-outline-brand,
   .btn-light-editorial {
@@ -2307,6 +2433,31 @@ img {
 }
 
 @media (max-width: 575.98px) {
+  .dossier-card-col .dossier-media-frame {
+    height: 340px !important;
+    min-height: 340px !important;
+    max-height: none !important;
+    width: 100% !important;
+  }
+  .dossier-card-col .dossier-media-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 25% !important;
+    display: block !important;
+  }
+  .dossier-card-col .d-flex.gap-2 {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .dossier-card-col .d-flex.gap-2 > .btn-brand,
+  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand,
+  .dossier-card-col [data-dossier-id] {
+    width: 100% !important;
+    min-width: 100% !important;
+    flex: none !important;
+  }
+
   .auth-page-wrapper {
     padding-top: 5rem;
     padding-bottom: 2rem;
@@ -3040,10 +3191,24 @@ img {
 /* ==========================================================================
    Dark Mode: Comparison & Verification Matrix Tables
    ========================================================================== */
-[data-theme="dark"] .comparison-table {
+[data-theme="dark"] .comparison-table,
+[data-theme="dark"] .table-responsive.comparison-table {
   background-color: var(--bg-surface) !important;
   border-color: var(--border-color) !important;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+[data-theme="dark"] .table-responsive.comparison-table::-webkit-scrollbar-track,
+[data-theme="dark"] .comparison-table::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+[data-theme="dark"] .table-responsive.comparison-table::-webkit-scrollbar-thumb,
+[data-theme="dark"] .comparison-table::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22) !important;
 }
 
 [data-theme="dark"] .comparison-table .table {
@@ -3161,12 +3326,14 @@ img {
   color: #FFFFFF !important;
 }
 
+[data-theme="dark"] .dossier-card-col [data-dossier-id],
 [data-theme="dark"] .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
-  background-color: rgba(56, 154, 167, 0.1) !important;
+  background-color: rgba(56, 154, 167, 0.12) !important;
   border: 1.5px solid var(--accent-teal) !important;
   color: #4BB1BF !important;
 }
 
+[data-theme="dark"] .dossier-card-col [data-dossier-id]:hover,
 [data-theme="dark"] .dossier-card-col .d-flex.gap-2 > .btn-outline-brand:hover {
   background-color: rgba(56, 154, 167, 0.25) !important;
   color: #FFFFFF !important;
