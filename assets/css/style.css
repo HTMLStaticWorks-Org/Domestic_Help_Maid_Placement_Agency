@@ -1061,6 +1061,30 @@ img {
   transform: scale(1.04);
 }
 
+/* Editorial Dossier Media Frame */
+.dossier-media-frame {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  width: 100%;
+  height: 310px;
+  min-height: 310px;
+  max-height: 310px;
+}
+
+.dossier-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform var(--transition-base);
+}
+
+.dossier-card-col:hover .dossier-media-frame img {
+  transform: scale(1.03);
+}
+
 .sample-profile-pill {
   position: absolute;
   top: 12px;
@@ -1690,6 +1714,26 @@ img {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.comparison-table .table {
+  --bs-table-bg: transparent !important;
+  --bs-table-color: var(--text-primary) !important;
+  --bs-table-border-color: var(--border-color) !important;
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  margin-bottom: 0 !important;
+}
+
+.comparison-table .table > :not(caption) > * > * {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-bottom-color: var(--border-color) !important;
+  padding: 1rem 1.25rem;
+  vertical-align: middle;
+  color: var(--text-primary);
 }
 
 .comparison-table th,
@@ -1701,9 +1745,24 @@ img {
 }
 
 .comparison-table thead th {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-secondary) !important;
   font-family: var(--font-heading);
   font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color) !important;
+}
+
+.comparison-table thead th.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+.comparison-table tbody tr:hover td {
+  background-color: var(--bg-subtle) !important;
 }
 
 /* Home 2 Interactive Category Tabs */
@@ -1864,7 +1923,7 @@ img {
    Tablet & 1024px View Grid: Standard Cards (2 per Row) & Very Big Cards (1 per Row)
    ========================================================================== */
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* 1. Standard Cards & Editorial Dossier Cards: 2 cards in one row, last odd-numbered card centered */
+  /* 1. Standard Cards: 2 cards in one row, last odd-numbered card centered */
   .row:has(> [class*="col-"] > .staff-card) > [class*="col-"],
   .row:has(> [class*="col-"] > .category-card) > [class*="col-"],
   .row:has(> [class*="col-"] > .testimonial-card) > [class*="col-"],
@@ -1872,8 +1931,6 @@ img {
   .row:has(> [class*="col-"] > .verification-step-card) > [class*="col-"],
   .row:has(> [class*="col-"] > .feature-card) > [class*="col-"],
   .row:has(> [class*="col-"] > .why-us-card) > [class*="col-"],
-  .dossier-card-col,
-  .row:has(> [class*="col-"] [data-dossier-id]) > [class*="col-"],
   #staffGrid > [class*="col-"],
   .staff-grid-row > [class*="col-"],
   .category-grid-row > [class*="col-"],
@@ -1895,8 +1952,6 @@ img {
   .row:has(> [class*="col-"] > .verification-step-card) > [class*="col-"]:last-child:nth-child(odd),
   .row:has(> [class*="col-"] > .feature-card) > [class*="col-"]:last-child:nth-child(odd),
   .row:has(> [class*="col-"] > .why-us-card) > [class*="col-"]:last-child:nth-child(odd),
-  .dossier-card-col:last-child:nth-child(odd),
-  .row:has(> [class*="col-"] [data-dossier-id]) > [class*="col-"]:last-child:nth-child(odd),
   #staffGrid > [class*="col-"]:last-child:nth-child(odd),
   .staff-grid-row > [class*="col-"]:last-child:nth-child(odd),
   .category-grid-row > [class*="col-"]:last-child:nth-child(odd),
@@ -1945,59 +2000,6 @@ img {
     object-position: center top !important;
   }
 
-  /* Candidate Dossier Cards in Home 2: 2 Cards per Row at 1024px & Tablet */
-  .dossier-card-col .p-4 {
-    padding: 1.25rem !important;
-  }
-  .dossier-card-col .small.fw-bold {
-    font-size: 0.74rem !important;
-  }
-  .dossier-card-col .badge.rounded-pill {
-    font-size: 0.72rem !important;
-    padding: 0.25rem 0.5rem !important;
-  }
-  .dossier-card-col h3.h5 {
-    font-size: 1.05rem !important;
-  }
-  .dossier-card-col p.small.fst-italic {
-    font-size: 0.78rem !important;
-    line-height: 1.4 !important;
-    padding: 0.45rem !important;
-    margin-bottom: 0.65rem !important;
-  }
-  .dossier-card-col .verified-checks-row {
-    gap: 0.3rem !important;
-    margin-bottom: 0.65rem !important;
-  }
-  .dossier-card-col .verified-chip {
-    font-size: 0.68rem !important;
-    padding: 0.18rem 0.45rem !important;
-  }
-  .dossier-card-col .d-flex.gap-2 {
-    gap: 0.4rem !important;
-  }
-  .dossier-card-col [data-dossier-id],
-  .dossier-card-col .d-flex.gap-2 > .btn-brand,
-  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
-    flex: 1 1 0 !important;
-    min-width: 0 !important;
-    padding: 0 0.4rem !important;
-    font-size: 0.78rem !important;
-    white-space: nowrap !important;
-    text-align: center !important;
-    height: 36px !important;
-    min-height: 36px !important;
-  }
-
-  .dossier-media-frame {
-    min-height: 270px !important;
-    height: 100% !important;
-  }
-  .dossier-media-frame img {
-    object-fit: cover !important;
-    object-position: center top !important;
-  }
-
   .editorial-pane-img {
     min-height: 350px !important;
     object-position: center top !important;
@@ -2008,6 +2010,177 @@ img {
   }
   .home2-bento-main img {
     object-position: center 20% !important;
+  }
+}
+
+/* Candidate Dossier Cards in Home 2: 2 Cards per Row at 1024px View */
+@media (min-width: 992px) and (max-width: 1024px) {
+  .dossier-card-col,
+  .row:has(> [class*="col-"] [data-dossier-id]) > [class*="col-"],
+  #editorial-staff .row.g-4 > [class*="col-"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+    display: flex !important;
+  }
+
+  .dossier-card-col > .p-4 {
+    padding: 1.25rem !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .dossier-card-col:last-child:nth-child(odd),
+  .row:has(> [class*="col-"] [data-dossier-id]) > [class*="col-"]:last-child:nth-child(odd) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Equal Column Proportion for Image & Content at 1024px */
+  .dossier-card-col .row.align-items-stretch {
+    height: 100% !important;
+  }
+
+  .dossier-card-col .col-sm-5 {
+    flex: 0 0 38% !important;
+    max-width: 38% !important;
+    width: 38% !important;
+  }
+
+  .dossier-card-col .col-sm-7 {
+    flex: 0 0 62% !important;
+    max-width: 62% !important;
+    width: 62% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  /* Exact Uniform Image Size Across All Cards at 1024px */
+  .dossier-card-col .dossier-media-frame {
+    width: 100% !important;
+    height: 290px !important;
+    min-height: 290px !important;
+    max-height: 290px !important;
+    border-radius: var(--radius-md) !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  .dossier-card-col .dossier-media-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    display: block !important;
+  }
+
+  .dossier-card-col .sample-profile-pill {
+    top: 8px !important;
+    left: 8px !important;
+    font-size: 0.65rem !important;
+    padding: 0.2rem 0.5rem !important;
+  }
+
+  /* Typography Proportions at 1024px */
+  .dossier-card-col .small.fw-bold {
+    font-size: 0.74rem !important;
+  }
+
+  .dossier-card-col .badge.rounded-pill {
+    font-size: 0.72rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+
+  .dossier-card-col h3.h5 {
+    font-size: 1.05rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .dossier-card-col p.small.fst-italic {
+    font-size: 0.78rem !important;
+    line-height: 1.42 !important;
+    padding: 0.45rem 0.6rem !important;
+    margin-bottom: 0.5rem !important;
+    min-height: 68px !important;
+    max-height: 68px !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+  }
+
+  .dossier-card-col .verified-checks-row {
+    gap: 0.35rem !important;
+    margin-bottom: 0.5rem !important;
+    min-height: 48px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-content: flex-start !important;
+  }
+
+  .dossier-card-col .verified-chip {
+    font-size: 0.68rem !important;
+    padding: 0.2rem 0.48rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* Nicely Designed Buttons at 1024px View */
+  .dossier-card-col .d-flex.gap-2 {
+    gap: 0.5rem !important;
+    margin-top: auto !important;
+    padding-top: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .dossier-card-col .d-flex.gap-2 > .btn-brand,
+  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    padding: 0.45rem 0.5rem !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    border-radius: var(--radius-sm) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    transition: all var(--transition-fast) !important;
+    box-shadow: 0 2px 6px rgba(19, 34, 56, 0.08) !important;
+  }
+
+  .dossier-card-col .d-flex.gap-2 > .btn-brand {
+    background-color: var(--accent-teal) !important;
+    border: 1.5px solid var(--accent-teal) !important;
+    color: #FFFFFF !important;
+  }
+
+  .dossier-card-col .d-flex.gap-2 > .btn-brand:hover {
+    background-color: var(--accent-teal-hover) !important;
+    border-color: var(--accent-teal-hover) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(31, 99, 108, 0.25) !important;
+  }
+
+  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
+    background-color: var(--bg-surface) !important;
+    border: 1.5px solid var(--accent-teal) !important;
+    color: var(--accent-teal) !important;
+  }
+
+  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand:hover {
+    background-color: var(--bg-teal-soft) !important;
+    color: var(--accent-teal-hover) !important;
+    border-color: var(--accent-teal-hover) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(31, 99, 108, 0.15) !important;
   }
 }
 
@@ -2029,6 +2202,67 @@ img {
   }
   [role="tablist"][aria-label="Domestic Service Categories"] .editorial-tab-btn i.bi-chevron-right {
     display: none;
+  }
+
+  /* Editorial Dossier Showcase in Home 2: Align 1 Card per Row in Tab View 768px */
+  .dossier-card-col,
+  .row:has(> [class*="col-"] [data-dossier-id]) > [class*="col-"],
+  #editorial-staff .row.g-4 > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .dossier-card-col .p-4 {
+    padding: 1.5rem !important;
+  }
+
+  .dossier-card-col .dossier-media-frame {
+    min-height: 260px !important;
+    height: 100% !important;
+  }
+
+  .dossier-card-col .dossier-media-frame img {
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  .dossier-card-col .small.fw-bold {
+    font-size: 0.8rem !important;
+  }
+
+  .dossier-card-col h3.h5 {
+    font-size: 1.2rem !important;
+  }
+
+  .dossier-card-col p.small.fst-italic {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+    padding: 0.5rem 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .dossier-card-col .verified-checks-row {
+    gap: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .dossier-card-col .verified-chip {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.55rem !important;
+  }
+
+  .dossier-card-col [data-dossier-id],
+  .dossier-card-col .d-flex.gap-2 > .btn-brand,
+  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
+    flex: 0 0 auto !important;
+    padding: 0.45rem 1.15rem !important;
+    font-size: 0.84rem !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    white-space: nowrap !important;
   }
 }
 
@@ -2719,6 +2953,10 @@ img {
   color: #F5B841 !important;
 }
 
+[data-theme="dark"] .text-danger {
+  color: #F87171 !important;
+}
+
 .dashboard-stat-card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
@@ -2797,6 +3035,142 @@ img {
 
 [data-theme="dark"] .dashboard-table tr:hover td {
   background-color: var(--bg-subtle) !important;
+}
+
+/* ==========================================================================
+   Dark Mode: Comparison & Verification Matrix Tables
+   ========================================================================== */
+[data-theme="dark"] .comparison-table {
+  background-color: var(--bg-surface) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .comparison-table .table {
+  --bs-table-bg: transparent !important;
+  --bs-table-color: #F4F1EA !important;
+  --bs-table-border-color: var(--border-color) !important;
+  background-color: transparent !important;
+  color: #F4F1EA !important;
+}
+
+[data-theme="dark"] .comparison-table .table > :not(caption) > * > * {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .comparison-table thead th {
+  background-color: #101B2B !important;
+  color: #FFFFFF !important;
+  border-bottom: 2px solid var(--border-color) !important;
+}
+
+[data-theme="dark"] .comparison-table thead th[style*="accent-teal"],
+[data-theme="dark"] .comparison-table thead th:nth-child(2) {
+  color: #4BB1BF !important;
+}
+
+[data-theme="dark"] .comparison-table thead th.text-muted,
+[data-theme="dark"] .comparison-table thead th:nth-child(3) {
+  color: #94A3B8 !important;
+}
+
+[data-theme="dark"] .comparison-table tbody td {
+  background-color: var(--bg-surface) !important;
+  color: #E2E8F0 !important;
+  border-bottom-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .comparison-table tbody td.fw-semibold {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .comparison-table tbody td.text-muted,
+[data-theme="dark"] .comparison-table tbody td .text-muted {
+  color: #94A3B8 !important;
+}
+
+[data-theme="dark"] .comparison-table tbody tr:hover td {
+  background-color: var(--bg-subtle) !important;
+}
+
+[data-theme="dark"] .comparison-table tbody tr:last-child td {
+  border-bottom: 0 !important;
+}
+
+[data-theme="dark"] .comparison-table .text-success {
+  color: #34D399 !important;
+}
+
+[data-theme="dark"] .comparison-table .text-danger {
+  color: #F87171 !important;
+}
+
+[data-theme="dark"] .comparison-table .text-warning {
+  color: #FBBF24 !important;
+}
+
+/* Compliance Notice Box Dark Mode */
+[data-theme="dark"] .compliance-notice-box {
+  background-color: var(--bg-surface) !important;
+  border-color: var(--border-color) !important;
+  border-left-color: var(--accent-teal) !important;
+}
+
+[data-theme="dark"] .compliance-notice-box h3 {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .compliance-notice-box p {
+  color: #CBD5E1 !important;
+}
+
+[dir="rtl"][data-theme="dark"] .compliance-notice-box {
+  border-right-color: var(--accent-teal) !important;
+  border-left-color: var(--border-color) !important;
+}
+
+/* Editorial Dossier Cards Dark Mode Support */
+[data-theme="dark"] .dossier-card-col .p-4 {
+  background-color: var(--bg-surface) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .dossier-card-col p.small.fst-italic {
+  background-color: var(--bg-secondary) !important;
+  color: #C6D1DF !important;
+}
+
+[data-theme="dark"] .dossier-card-col .sample-profile-pill {
+  background-color: rgba(6, 11, 18, 0.9) !important;
+  color: #F4F1EA !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+[data-theme="dark"] .dossier-card-col .d-flex.gap-2 > .btn-brand {
+  background-color: var(--accent-teal) !important;
+  border-color: var(--accent-teal) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .dossier-card-col .d-flex.gap-2 > .btn-brand:hover {
+  background-color: var(--accent-teal-hover) !important;
+  border-color: var(--accent-teal-hover) !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
+  background-color: rgba(56, 154, 167, 0.1) !important;
+  border: 1.5px solid var(--accent-teal) !important;
+  color: #4BB1BF !important;
+}
+
+[data-theme="dark"] .dossier-card-col .d-flex.gap-2 > .btn-outline-brand:hover {
+  background-color: rgba(56, 154, 167, 0.25) !important;
+  color: #FFFFFF !important;
+  border-color: #64C3D0 !important;
 }
 
 /* Placement Timeline Step Tracker in Dashboard */
@@ -2933,6 +3307,11 @@ img {
   border-left: 1px solid var(--border-color);
   border-right: 4px solid var(--accent-teal);
   border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+[dir="rtl"] .dossier-card-col .sample-profile-pill {
+  left: auto !important;
+  right: 12px !important;
 }
 
 [dir="rtl"] .back-to-top-btn {
