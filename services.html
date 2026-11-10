@@ -46,18 +46,15 @@
     <nav class="navbar navbar-expand-xl site-navbar" aria-label="Main Navigation">
       <div class="container">
         <a class="navbar-brand-wrap" href="index.html">
-          <span class="brand-mark">H</span>
+          <span class="brand-mark"><img src="assets/images/favicon.svg" alt="Hearth &amp; Haven Logo" width="40" height="40"></span>
           <span class="brand-text">
             <span class="brand-name">Hearth &amp; Haven</span>
             <span class="brand-tagline">Domestic Placement Agency</span>
           </span>
         </a>
 
+        <!-- Mobile Toggle on Small & 1024px Screens (RTL & Theme kept inside menu) -->
         <div class="d-flex align-items-center gap-2 d-xl-none">
-          <button type="button" class="rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
-          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Toggle color theme">
-            <i class="bi bi-moon-stars-fill"></i>
-          </button>
           <button class="navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-list fs-4"></i>
           </button>
@@ -88,10 +85,10 @@
               <a class="nav-link active" href="services.html">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="verification.html">Verification Process</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="verification.html">Verification Process</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -102,12 +99,24 @@
             </li>
           </ul>
 
-          <div class="navbar-actions">
-            <a href="signup.html" class="nav-signup-btn">Sign Up</a>
-            <button type="button" class="rtl-toggle-btn d-none d-xl-inline-flex" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
-            <button type="button" class="theme-toggle-btn d-none d-xl-inline-flex" data-theme-toggle aria-label="Toggle color theme">
+          <!-- Right Actions on Desktop: RTL, Theme Toggle, Sign Up -->
+          <div class="navbar-actions d-none d-xl-flex">
+            <button type="button" class="rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+            <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Toggle color theme">
               <i class="bi bi-moon-stars-fill"></i>
             </button>
+            <a href="signup.html" class="nav-signup-btn">Sign Up</a>
+          </div>
+
+          <!-- Mobile Hamburger Bottom Bar: RTL, Theme & Sign Up inside menu for Mobile & 1024px -->
+          <div class="mobile-nav-actions d-xl-none mt-3 pt-3 d-flex align-items-center justify-content-between gap-2">
+            <div class="d-flex align-items-center gap-2">
+              <button type="button" class="rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+              <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Toggle color theme">
+                <i class="bi bi-moon-stars-fill"></i>
+              </button>
+            </div>
+            <a href="signup.html" class="nav-signup-btn flex-grow-1 text-center">Sign Up</a>
           </div>
         </div>
       </div>
@@ -116,9 +125,9 @@
 
   <main>
     <!-- ======================================================================
-         PAGE HERO
+         PAGE HERO WITH RELATED BACKGROUND IMAGE & EDITORIAL OVERLAY
          ====================================================================== -->
-    <section class="page-hero">
+    <section class="page-hero page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1800&q=80');">
       <div class="container">
         <div class="row align-items-center g-4 js-gsap-reveal">
           <div class="col-lg-8">
@@ -139,8 +148,8 @@
             </div>
           </div>
           <div class="col-lg-4">
-            <div class="p-4 rounded-4 shadow-sm" style="background-color: var(--bg-surface); border: 1px solid var(--border-color);">
-              <h2 class="h6 mb-2"><i class="bi bi-shield-check me-2" style="color: var(--accent-teal);"></i>Every Placement Includes:</h2>
+            <div class="hero-summary-card p-4 rounded-4 shadow-sm">
+              <h2 class="h6 mb-2 text-white"><i class="bi bi-shield-check me-2" style="color: var(--accent-warm);"></i>Every Placement Includes:</h2>
               <ul class="list-unstyled small mb-3">
                 <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Verified Govt ID &amp; Dual Address Check</li>
                 <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Prior Employer Reference Interviews</li>
@@ -640,7 +649,7 @@
       <div class="row g-5 pb-5 border-bottom footer-divider">
         <div class="col-lg-4">
           <a class="navbar-brand-wrap mb-3" href="index.html">
-            <span class="brand-mark">H</span>
+            <span class="brand-mark"><img src="assets/images/favicon.svg" alt="Hearth &amp; Haven Logo" width="40" height="40"></span>
             <span class="brand-text">
               <span class="brand-name footer-brand-title">Hearth &amp; Haven</span>
               <span class="brand-tagline footer-brand-subtitle">Domestic Placement Agency</span>

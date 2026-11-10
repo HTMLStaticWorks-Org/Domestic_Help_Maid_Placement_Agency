@@ -48,14 +48,14 @@
       <!-- Top Brand Header (Retaining Brand Name in Same Top-Left Place) -->
       <div class="sidebar-brand-header">
         <a class="navbar-brand-wrap" href="index.html">
-          <span class="brand-mark">H</span>
+          <span class="brand-mark"><img src="assets/images/favicon.svg" alt="Hearth &amp; Haven Logo" width="40" height="40"></span>
           <span class="brand-text">
             <span class="brand-name">Hearth &amp; Haven</span>
             <span class="brand-tagline">Domestic Placement Agency</span>
           </span>
         </a>
-        <!-- Mobile Sidebar Close Button -->
-        <button type="button" class="sidebar-close-btn d-lg-none" id="sidebarCloseBtn" aria-label="Close sidebar menu">
+        <!-- Mobile & Tablet Sidebar Close Button -->
+        <button type="button" class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close sidebar menu">
           <i class="bi bi-x-lg"></i>
         </button>
       </div>
@@ -100,8 +100,14 @@
         </button>
       </nav>
 
-      <!-- Logout Button in Side Menu -->
+      <!-- Sidebar Footer: RTL, Theme Toggle & Logout inside Sidebar for Web & Mobile Drawer -->
       <div class="sidebar-footer">
+        <div class="d-flex align-items-center gap-2 mb-2 pb-2 border-bottom" style="border-color: var(--border-color) !important;">
+          <button type="button" class="rtl-toggle-btn flex-fill justify-content-center" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
+          <button type="button" class="theme-toggle-btn flex-fill justify-content-center" data-theme-toggle aria-label="Toggle color theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+        </div>
         <a href="login.html" class="sidebar-logout-btn" title="Sign out of client dashboard">
           <i class="bi bi-box-arrow-right"></i>
           <span>Logout</span>
@@ -117,25 +123,13 @@
       <!-- Dashboard Top Header Bar (Controls & Breadcrumbs) -->
       <header class="dashboard-topbar">
         <div class="d-flex align-items-center gap-3">
-          <button type="button" class="sidebar-toggle-btn d-lg-none" id="sidebarOpenBtn" aria-label="Open sidebar menu">
+          <button type="button" class="sidebar-toggle-btn" id="sidebarOpenBtn" aria-label="Open sidebar menu">
             <i class="bi bi-list fs-4"></i>
           </button>
           <div class="dashboard-portal-title">
             <span class="fw-bold">Client Placement Portal</span>
             <span class="text-muted ms-2 small d-none d-sm-inline">| Client ID: #HH-CL-4809 &bull; Worli, Mumbai</span>
           </div>
-        </div>
-
-        <!-- Right Controls: RTL Button, Theme Toggle, Quick Logout -->
-        <div class="d-flex align-items-center gap-2">
-          <button type="button" class="rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" title="Toggle RTL direction">RTL</button>
-          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Toggle color theme">
-            <i class="bi bi-moon-stars-fill"></i>
-          </button>
-          <a href="login.html" class="btn-outline-brand btn-sm d-none d-md-inline-flex align-items-center gap-2 py-1 px-3" title="Log out of account">
-            <i class="bi bi-box-arrow-right"></i>
-            <span>Logout</span>
-          </a>
         </div>
       </header>
 
@@ -284,7 +278,7 @@
                     <strong>Trial Goal:</strong> Evaluate healthy Gujarati &amp; Continental meals, spice calibration, and kitchen hygiene.
                   </div>
 
-                  <div class="d-flex gap-2">
+                  <div class="d-flex flex-wrap gap-2">
                     <button type="button" class="btn-brand btn-sm flex-grow-1" data-dossier-id="rajesh-sharma">
                       Inspect Dossier
                     </button>
@@ -583,7 +577,7 @@
                   </div>
                   <div class="d-flex justify-content-between">
                     <span>Next Due Date:</span>
-                    <strong class="text-primary">01 Dec 2026</strong>
+                    <strong style="color: var(--accent-teal);">01 Dec 2026</strong>
                   </div>
                 </div>
                 <div class="small text-muted"><i class="bi bi-shield-lock me-1"></i>Hearth &amp; Haven never takes any ongoing salary commission.</div>
