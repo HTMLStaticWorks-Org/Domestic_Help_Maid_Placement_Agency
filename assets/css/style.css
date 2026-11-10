@@ -1864,7 +1864,7 @@ img {
    Tablet & 1024px View Grid: Standard Cards (2 per Row) & Very Big Cards (1 per Row)
    ========================================================================== */
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* 1. Standard Cards: 2 cards in one row, last odd-numbered card centered */
+  /* 1. Standard Cards & Editorial Dossier Cards: 2 cards in one row, last odd-numbered card centered */
   .row:has(> [class*="col-"] > .staff-card) > [class*="col-"],
   .row:has(> [class*="col-"] > .category-card) > [class*="col-"],
   .row:has(> [class*="col-"] > .testimonial-card) > [class*="col-"],
@@ -1872,6 +1872,8 @@ img {
   .row:has(> [class*="col-"] > .verification-step-card) > [class*="col-"],
   .row:has(> [class*="col-"] > .feature-card) > [class*="col-"],
   .row:has(> [class*="col-"] > .why-us-card) > [class*="col-"],
+  .dossier-card-col,
+  .row:has(> [class*="col-"] [data-dossier-id]) > [class*="col-"],
   #staffGrid > [class*="col-"],
   .staff-grid-row > [class*="col-"],
   .category-grid-row > [class*="col-"],
@@ -1893,6 +1895,8 @@ img {
   .row:has(> [class*="col-"] > .verification-step-card) > [class*="col-"]:last-child:nth-child(odd),
   .row:has(> [class*="col-"] > .feature-card) > [class*="col-"]:last-child:nth-child(odd),
   .row:has(> [class*="col-"] > .why-us-card) > [class*="col-"]:last-child:nth-child(odd),
+  .dossier-card-col:last-child:nth-child(odd),
+  .row:has(> [class*="col-"] [data-dossier-id]) > [class*="col-"]:last-child:nth-child(odd),
   #staffGrid > [class*="col-"]:last-child:nth-child(odd),
   .staff-grid-row > [class*="col-"]:last-child:nth-child(odd),
   .category-grid-row > [class*="col-"]:last-child:nth-child(odd),
@@ -1915,8 +1919,6 @@ img {
   .hero-home-2 .col-lg-4,
   .form-card,
   .row:has(> [class*="col-"] > .form-card) > [class*="col-"],
-  .dossier-card-col,
-  .row:has(> [class*="col-"] [data-dossier-id]) > [class*="col-"],
   .verification-timeline-col,
   .row:has(> [class*="col-"] > .verification-timeline) > [class*="col-"],
   #trust-safety .col-lg-8,
@@ -1931,6 +1933,81 @@ img {
     flex: 0 0 100% !important;
     max-width: 100% !important;
     width: 100% !important;
+  }
+
+  /* 3. Prevent Human Images in Cards from Cropping in 1024px & Tablet Views */
+  .staff-card-media {
+    height: 380px !important;
+    min-height: 360px !important;
+  }
+  .staff-card-media img {
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  /* Candidate Dossier Cards in Home 2: 2 Cards per Row at 1024px & Tablet */
+  .dossier-card-col .p-4 {
+    padding: 1.25rem !important;
+  }
+  .dossier-card-col .small.fw-bold {
+    font-size: 0.74rem !important;
+  }
+  .dossier-card-col .badge.rounded-pill {
+    font-size: 0.72rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+  .dossier-card-col h3.h5 {
+    font-size: 1.05rem !important;
+  }
+  .dossier-card-col p.small.fst-italic {
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+    padding: 0.45rem !important;
+    margin-bottom: 0.65rem !important;
+  }
+  .dossier-card-col .verified-checks-row {
+    gap: 0.3rem !important;
+    margin-bottom: 0.65rem !important;
+  }
+  .dossier-card-col .verified-chip {
+    font-size: 0.68rem !important;
+    padding: 0.18rem 0.45rem !important;
+  }
+  .dossier-card-col .d-flex.gap-2 {
+    gap: 0.4rem !important;
+  }
+  .dossier-card-col [data-dossier-id],
+  .dossier-card-col .d-flex.gap-2 > .btn-brand,
+  .dossier-card-col .d-flex.gap-2 > .btn-outline-brand {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    padding: 0 0.4rem !important;
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    height: 36px !important;
+    min-height: 36px !important;
+  }
+
+  .dossier-media-frame {
+    min-height: 270px !important;
+    height: 100% !important;
+  }
+  .dossier-media-frame img {
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  .editorial-pane-img {
+    min-height: 350px !important;
+    object-position: center top !important;
+  }
+
+  .home2-bento-main {
+    min-height: 400px !important;
+  }
+  .home2-bento-main img {
+    object-position: center 20% !important;
   }
 }
 
